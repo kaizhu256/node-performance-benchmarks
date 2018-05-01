@@ -1,0 +1,37 @@
+<svg height="286" width="720" xmlns="http://www.w3.org/2000/svg">
+<rect height="286" fill="#555" width="720"></rect>
+<text fill="#7f7" font-family="Courier New" font-size="12" xml:space="preserve">
+<tspan x="10" y="26">npm WARN npm npm does not support Node.js v10.0.0</tspan>
+
+<tspan x="10" y="42">npm WARN npm You should probably upgrade to a newer version of node as we</tspan>
+
+<tspan x="10" y="58">npm WARN npm can't make any promises that npm will work with this version.</tspan>
+
+<tspan x="10" y="74">npm WARN npm Supported releases of Node.js are the latest release of 4, 6, 7, 8, 9.</tspan>
+
+<tspan x="10" y="90">npm WARN npm You can find the latest version at https://nodejs.org/</tspan>
+
+<tspan x="10" y="106">npm WARN saveError ENOENT: no such file or directory, open '/tmp/app/package.json'</tspan>
+
+<tspan x="10" y="122">npm notice created a lockfile as package-lock.json. You should commit this file.</tspan>
+
+<tspan x="10" y="138">npm WARN enoent ENOENT: no such file or directory, open '/tmp/app/package.json'</tspan>
+
+<tspan x="10" y="154">npm WARN app No description</tspan>
+
+<tspan x="10" y="170">npm WARN app No repository field.</tspan>
+
+<tspan x="10" y="186">npm WARN app No README data</tspan>
+
+<tspan x="10" y="202">npm WARN app No license field.</tspan>
+
+<tspan x="10" y="218"></tspan>
+
+<tspan x="10" y="234">+ performance-benchmarks@2018.5.1</tspan>
+
+<tspan x="10" y="250">added 1 package in 0.745s</tspan>
+
+<tspan x="10" y="266">server starting on port 8081</tspan>
+
+</text>
+</svg>
