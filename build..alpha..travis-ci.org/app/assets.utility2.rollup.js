@@ -3931,7 +3931,7 @@ vendor\\)s\\{0,1\\}\\(\\b\\|_\\)\
                 }
                 options.data = JSON.stringify({
                     branch: options.branch,
-                    content: new Buffer(options.content || '').toString('base64'),
+                    content: Buffer.from(options.content || '').toString('base64'),
                     message: options.message,
                     sha: options.sha
                 });
@@ -4018,7 +4018,7 @@ vendor\\)s\\{0,1\\}\\(\\b\\|_\\)\
                     }, options.onNext);
                     break;
                 case 2:
-                    options.onNext(null, new Buffer(data.content || '', 'base64'));
+                    options.onNext(null, Buffer.from(data.content || '', 'base64'));
                     break;
                 default:
                     onError(error, !error && data);
@@ -4137,7 +4137,7 @@ vendor\\)s\\{0,1\\}\\(\\b\\|_\\)\
                 case 2:
                     // put file with sha
                     local.githubContentAjax({
-                        content: new Buffer(data.content || '', 'base64'),
+                        content: Buffer.from(data.content || '', 'base64'),
                         httpRequest: options.httpRequest,
                         message: options.message,
                         method: 'PUT',
@@ -18637,7 +18637,7 @@ n<65536){if((t-=3)<0)break;s.push(n>>12|224,n>>6&63|128,n&63|128)}else{if(!(n<11
 /* jslint-ignore-end */
             if (typeof text === 'string') {
                 if (local.modeJs === 'node') {
-                    return new Buffer(text);
+                    return Buffer.from(text);
                 }
                 if (local.global.TextEncoder) {
                     return new local.global.TextEncoder('utf-8').encode(text);
@@ -18699,7 +18699,7 @@ n<65536){if((t-=3)<0)break;s.push(n>>12|224,n>>6&63|128,n&63|128)}else{if(!(n<11
                 return bff;
             }
             if (local.modeJs === 'node') {
-                return String(new Buffer(bff));
+                return String(local.bufferToNodeBuffer(bff));
             }
             if (local.global.TextDecoder) {
                 return new local.global.TextDecoder('utf-8').decode(bff);
@@ -18807,7 +18807,7 @@ return Utf8ArrayToStr(bff);
                     local.assert(!local.jslint.errorText, local.jslint.errorText);
                     local.fsWriteFileWithMkdirpSync(
                         local.env.npm_config_dir_build + '/app' + options2.file,
-                        new Buffer(xhr.response)
+                        local.bufferToNodeBuffer(xhr.response)
                     );
                     onParallel();
                 });
@@ -28481,11 +28481,11 @@ window.swgg.uiEventListenerDict[".onEventUiReload"]({ swggInit: true });\n\
     // run node js-env code - init-after
     /* istanbul ignore next */
     case 'node':
-        local.assetsDict['/assets.swagger-ui.logo.medium.png'] = new Buffer(
+        local.assetsDict['/assets.swagger-ui.logo.medium.png'] = Buffer.from(
             local.templateSwaggerUiLogoMediumBase64,
             'base64'
         );
-        local.assetsDict['/assets.swagger-ui.logo.small.png'] = new Buffer(
+        local.assetsDict['/assets.swagger-ui.logo.small.png'] = Buffer.from(
             local.templateSwaggerUiLogoSmallBase64,
             'base64'
         );
