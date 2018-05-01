@@ -16518,7 +16518,7 @@ shBuildCiBefore () {(set -e\n\
 )}\n\
 \n\
 # run shBuildCi\n\
-eval "$(utility2 source)" || true\n\
+eval "$(utility2 source)"\n\
 shBuildCi\n\
 ```\n\
 \n\
