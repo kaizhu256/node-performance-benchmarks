@@ -1,0 +1,36 @@
+before_install:
+    # init xvfb
+    # http://docs.travis-ci.com/user/gui-and-headless-browsers/
+    - export DISPLAY=:99.0 && sh -e /etc/init.d/xvfb start
+    # override $NODE_VERSION
+    - CI_COMMIT_MESSAGE="$(git log -1 --pretty=%s)" && if (printf "$CI_COMMIT_MESSAGE" | grep -qE "\bNODE_VERSION="); then nvm install "$(printf "$CI_COMMIT_MESSAGE" | sed -e "s/.*\bNODE_VERSION=//" -e "s/ .*//")" && node --version && npm --version; fi
+    # bug-workaround for "npm install [package name] removes packages"
+    # https://github.com/npm/npm/issues/17379
+    # https://github.com/travis-ci/travis-ci/issues/4653#issuecomment-379397837
+    - dpkg --compare-versions `npm -v` ge 5.8 || npm i -g npm@^5.8
+branches:
+    only:
+    - /^alpha$/
+    - /^beta$/
+    - /^benchmark\..*/
+    - /^cron$/
+    - /^docker\..*/
+    - /^master$/
+    - /^publish$/
+    - /^task$/
+env:
+    global:
+    # this value is auto-created by shTravisCryptoAesEncryptYml
+    - secure: i8gk5pVj2nbPcH6g5kyTszaaYZCHxoqKmjzL5hQO1BFoZIr5xOnrMT6gPSCMA0R2Ok0PplJz83d87WT188AtAgxxHdOJBWu6P0KGAdKqjkuhuOa5hVZIBTWEj+apKMZCKv/GKJSHc2LnOzS5vq8TecUpgcCxfqdMSHaYiKhwGdCT0yvpGSouJ1AO0V10gDs1DK2zteVqrOTp1se4+osbO58TNbNBoDgkukpOjhcAgAcurXFHuyVVYPv8jBl2JejK8n38Mtgdn/Kx3myM9b/d0h94ZKhocA8J1D4hXQODNgIl1YdZ3PyYKJ2fJYlRk+oCqvAuloEMAMo+X9K8V4ZCc6L7AcF9XIMYdzJ9etN3YW8D7wfPviZHQh95PBjEJ04N+AI17F22AK72wnmGkuRC9jOCDLNnchjqW0XiPpUiZarPuNVZ+c/yvkDUbnVxqLC3Cjf8s5sdwvW2SjPqsnDcsMYXKghL2G/9nxEsRH8mUiG+EFpBIdmQezrfD87jQ4W5HAZsQcPOBpXi3rgj/SmcaExgwLmZtPEP34PR3zoJH6vTsanQKrWXIr8eG66UcIvty9kiwrrz91NHJRf7Ff99nD1xHXWoyuk8gZDDzYER3J925lnfKl1CxY1LsTDEMNeaPSlqAwQ95h6lfa1P2mHcSNObDK4Kk/ehIyU+csaOg/k= # CRYPTO_AES_KEY
+language:
+    - node_js
+node_js:
+    # - 8
+    - node
+script:
+    - npm run build-ci
+services:
+    - docker
+# http://docs.travis-ci.com/user/workers/container-based-infrastructure
+sudo:
+    false
