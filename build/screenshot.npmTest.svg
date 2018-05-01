@@ -1,9 +1,9 @@
-<svg height="3726" width="720" xmlns="http://www.w3.org/2000/svg">
-<rect height="3726" fill="#555" width="720"></rect>
+<svg height="3438" width="720" xmlns="http://www.w3.org/2000/svg">
+<rect height="3438" fill="#555" width="720"></rect>
 <text fill="#7f7" font-family="Courier New" font-size="12" xml:space="preserve">
 <tspan x="10" y="26"></tspan>
 
-<tspan x="10" y="42">[MODE_BUILD=npmTest] - 2018-05-01T12:09:20.912Z - npm-testing /home/travis/build/kaizhu256/node-\</tspan>
+<tspan x="10" y="42">[MODE_BUILD=npmTest] - 2018-05-01T12:27:51.798Z - npm-testing /home/travis/build/kaizhu256/node-\</tspan>
 <tspan x="10" y="58">performance-benchmarks</tspan>
 
 <tspan x="10" y="74"></tspan>
@@ -18,7 +18,7 @@
 <tspan x="10" y="154">npmTest - merged test-report from file /home/travis/build/kaizhu256/node-performance-benchmarks/\</tspan>
 <tspan x="10" y="170">tmp/build/test-report.json</tspan>
 
-<tspan x="10" y="186">&gt; server listening on http-port 50481</tspan>
+<tspan x="10" y="186">&gt; server listening on http-port 45724</tspan>
 
 <tspan x="10" y="202">apidocCreate - readExample /home/travis/build/kaizhu256/node-performance-benchmarks/package.json</tspan>
 
@@ -63,56 +63,56 @@
 <tspan x="10" y="538"></tspan>
 
 <tspan x="10" y="554">browserTest - created electron entry-page /home/travis/build/kaizhu256/node-performance-benchmar\</tspan>
-<tspan x="10" y="570">ks/tmp/electron.1631b9b6f600.741905a140466.html</tspan>
+<tspan x="10" y="570">ks/tmp/electron.1631bac62970.3848826612e23.html</tspan>
 
 <tspan x="10" y="586"></tspan>
 
-<tspan x="10" y="602">(node:6271) ExperimentalWarning: The fs/promises API is experimental</tspan>
+<tspan x="10" y="602">(node:6272) ExperimentalWarning: The fs/promises API is experimental</tspan>
 
-<tspan x="10" y="618">(node:6271) ExperimentalWarning: The http2 module is an experimental API.</tspan>
+<tspan x="10" y="618">(node:6272) ExperimentalWarning: The http2 module is an experimental API.</tspan>
 
-<tspan x="10" y="634">(node:6271) [DEP0025] DeprecationWarning: sys is deprecated. Use util instead.</tspan>
+<tspan x="10" y="634">(node:6272) [DEP0025] DeprecationWarning: sys is deprecated. Use util instead.</tspan>
 
-<tspan x="10" y="650">(node:6271) [DEP0084] DeprecationWarning: Requiring Node.js-bundled 'v8/tools/splaytree' module \</tspan>
+<tspan x="10" y="650">(node:6272) [DEP0084] DeprecationWarning: Requiring Node.js-bundled 'v8/tools/splaytree' module \</tspan>
 <tspan x="10" y="666">is deprecated. Please install the necessary module locally.</tspan>
 
-<tspan x="10" y="682">(node:6271) [DEP0084] DeprecationWarning: Requiring Node.js-bundled 'v8/tools/codemap' module is\</tspan>
+<tspan x="10" y="682">(node:6272) [DEP0084] DeprecationWarning: Requiring Node.js-bundled 'v8/tools/codemap' module is\</tspan>
 <tspan x="10" y="698"> deprecated. Please install the necessary module locally.</tspan>
 
-<tspan x="10" y="714">(node:6271) [DEP0084] DeprecationWarning: Requiring Node.js-bundled 'v8/tools/consarray' module \</tspan>
+<tspan x="10" y="714">(node:6272) [DEP0084] DeprecationWarning: Requiring Node.js-bundled 'v8/tools/consarray' module \</tspan>
 <tspan x="10" y="730">is deprecated. Please install the necessary module locally.</tspan>
 
-<tspan x="10" y="746">(node:6271) [DEP0084] DeprecationWarning: Requiring Node.js-bundled 'v8/tools/csvparser' module \</tspan>
+<tspan x="10" y="746">(node:6272) [DEP0084] DeprecationWarning: Requiring Node.js-bundled 'v8/tools/csvparser' module \</tspan>
 <tspan x="10" y="762">is deprecated. Please install the necessary module locally.</tspan>
 
-<tspan x="10" y="778">(node:6271) [DEP0084] DeprecationWarning: Requiring Node.js-bundled 'v8/tools/profile' module is\</tspan>
+<tspan x="10" y="778">(node:6272) [DEP0084] DeprecationWarning: Requiring Node.js-bundled 'v8/tools/profile' module is\</tspan>
 <tspan x="10" y="794"> deprecated. Please install the necessary module locally.</tspan>
 
-<tspan x="10" y="810">(node:6271) [DEP0084] DeprecationWarning: Requiring Node.js-bundled 'v8/tools/profile_view' modu\</tspan>
+<tspan x="10" y="810">(node:6272) [DEP0084] DeprecationWarning: Requiring Node.js-bundled 'v8/tools/profile_view' modu\</tspan>
 <tspan x="10" y="826">le is deprecated. Please install the necessary module locally.</tspan>
 
-<tspan x="10" y="842">(node:6271) [DEP0084] DeprecationWarning: Requiring Node.js-bundled 'v8/tools/logreader' module \</tspan>
+<tspan x="10" y="842">(node:6272) [DEP0084] DeprecationWarning: Requiring Node.js-bundled 'v8/tools/logreader' module \</tspan>
 <tspan x="10" y="858">is deprecated. Please install the necessary module locally.</tspan>
 
-<tspan x="10" y="874">(node:6271) [DEP0084] DeprecationWarning: Requiring Node.js-bundled 'v8/tools/arguments' module \</tspan>
+<tspan x="10" y="874">(node:6272) [DEP0084] DeprecationWarning: Requiring Node.js-bundled 'v8/tools/arguments' module \</tspan>
 <tspan x="10" y="890">is deprecated. Please install the necessary module locally.</tspan>
 
-<tspan x="10" y="906">(node:6271) [DEP0084] DeprecationWarning: Requiring Node.js-bundled 'v8/tools/tickprocessor' mod\</tspan>
+<tspan x="10" y="906">(node:6272) [DEP0084] DeprecationWarning: Requiring Node.js-bundled 'v8/tools/tickprocessor' mod\</tspan>
 <tspan x="10" y="922">ule is deprecated. Please install the necessary module locally.</tspan>
 
-<tspan x="10" y="938">(node:6271) [DEP0084] DeprecationWarning: Requiring Node.js-bundled 'v8/tools/SourceMap' module \</tspan>
+<tspan x="10" y="938">(node:6272) [DEP0084] DeprecationWarning: Requiring Node.js-bundled 'v8/tools/SourceMap' module \</tspan>
 <tspan x="10" y="954">is deprecated. Please install the necessary module locally.</tspan>
 
-<tspan x="10" y="970">(node:6271) [DEP0084] DeprecationWarning: Requiring Node.js-bundled 'v8/tools/tickprocessor-driv\</tspan>
+<tspan x="10" y="970">(node:6272) [DEP0084] DeprecationWarning: Requiring Node.js-bundled 'v8/tools/tickprocessor-driv\</tspan>
 <tspan x="10" y="986">er' module is deprecated. Please install the necessary module locally.</tspan>
 
-<tspan x="10" y="1002">(node:6271) [DEP0084] DeprecationWarning: Requiring Node.js-bundled 'node-inspect/lib/_inspect' \</tspan>
+<tspan x="10" y="1002">(node:6272) [DEP0084] DeprecationWarning: Requiring Node.js-bundled 'node-inspect/lib/_inspect' \</tspan>
 <tspan x="10" y="1018">module is deprecated. Please install the necessary module locally.</tspan>
 
-<tspan x="10" y="1034">(node:6271) [DEP0084] DeprecationWarning: Requiring Node.js-bundled 'node-inspect/lib/internal/i\</tspan>
+<tspan x="10" y="1034">(node:6272) [DEP0084] DeprecationWarning: Requiring Node.js-bundled 'node-inspect/lib/internal/i\</tspan>
 <tspan x="10" y="1050">nspect_client' module is deprecated. Please install the necessary module locally.</tspan>
 
-<tspan x="10" y="1066">(node:6271) [DEP0084] DeprecationWarning: Requiring Node.js-bundled 'node-inspect/lib/internal/i\</tspan>
+<tspan x="10" y="1066">(node:6272) [DEP0084] DeprecationWarning: Requiring Node.js-bundled 'node-inspect/lib/internal/i\</tspan>
 <tspan x="10" y="1082">nspect_repl' module is deprecated. Please install the necessary module locally.</tspan>
 
 <tspan x="10" y="1098">Xlib:  extension "RANDR" missing on display ":99.0".</tspan>
@@ -124,254 +124,230 @@
 
 <tspan x="10" y="1162">Xlib:  extension "RANDR" missing on display ":99.0".</tspan>
 
-<tspan x="10" y="1178">[6339:0501/120922.366497:WARNING:audio_manager.cc(295)] Multiple instances of AudioManager detec\</tspan>
+<tspan x="10" y="1178">[6340:0501/122752.901818:WARNING:audio_manager.cc(295)] Multiple instances of AudioManager detec\</tspan>
 <tspan x="10" y="1194">ted</tspan>
 
-<tspan x="10" y="1210">[6339:0501/120922.366650:WARNING:audio_manager.cc(254)] Multiple instances of AudioManager detec\</tspan>
+<tspan x="10" y="1210">[6340:0501/122752.901889:WARNING:audio_manager.cc(254)] Multiple instances of AudioManager detec\</tspan>
 <tspan x="10" y="1226">ted</tspan>
 
-<tspan x="10" y="1242">&gt; (node:6343) [DEP0005] DeprecationWarning: Buffer() is deprecated due to security and usability\</tspan>
-<tspan x="10" y="1258"> issues. Please use the Buffer.alloc(), Buffer.allocUnsafe(), or Buffer.from() methods instead.</tspan>
+<tspan x="10" y="1242">[6370:0501/122752.960227:ERROR:sandbox_linux.cc(343)] InitializeSandbox() called with multiple t\</tspan>
+<tspan x="10" y="1258">hreads in process gpu-process. </tspan>
 
-<tspan x="10" y="1274">server listening on http-port 62547</tspan>
+<tspan x="10" y="1274">&gt; (node:6344) [DEP0005] DeprecationWarning: Buffer() is deprecated due to security and usability\</tspan>
+<tspan x="10" y="1290"> issues. Please use the Buffer.alloc(), Buffer.allocUnsafe(), or Buffer.from() methods instead.</tspan>
 
-<tspan x="10" y="1290">[6368:0501/120922.506729:ERROR:sandbox_linux.cc(343)] InitializeSandbox() called with multiple t\</tspan>
-<tspan x="10" y="1306">hreads in process gpu-process. </tspan>
+<tspan x="10" y="1306">server listening on http-port 35342</tspan>
 
-<tspan x="10" y="1322">[6339:0501/120922.544293:ERROR:browser_gpu_channel_host_factory.cc(125)] Failed to create channe\</tspan>
+<tspan x="10" y="1322">[6340:0501/122753.034166:ERROR:browser_gpu_channel_host_factory.cc(125)] Failed to create channe\</tspan>
 <tspan x="10" y="1338">l.</tspan>
 
-<tspan x="10" y="1354">[6339:0501/120922.546745:ERROR:browser_gpu_channel_host_factory.cc(125)] Failed to create channe\</tspan>
+<tspan x="10" y="1354">[6340:0501/122753.035270:ERROR:browser_gpu_channel_host_factory.cc(125)] Failed to create channe\</tspan>
 <tspan x="10" y="1370">l.</tspan>
 
-<tspan x="10" y="1386">[6339:0501/120922.548094:ERROR:browser_gpu_channel_host_factory.cc(125)] Failed to create channe\</tspan>
+<tspan x="10" y="1386">[6340:0501/122753.036283:ERROR:browser_gpu_channel_host_factory.cc(125)] Failed to create channe\</tspan>
 <tspan x="10" y="1402">l.</tspan>
 
-<tspan x="10" y="1418">[6339:0501/120922.549355:ERROR:browser_gpu_channel_host_factory.cc(125)] Failed to create channe\</tspan>
+<tspan x="10" y="1418">[6340:0501/122753.039791:ERROR:browser_gpu_channel_host_factory.cc(125)] Failed to create channe\</tspan>
 <tspan x="10" y="1434">l.</tspan>
 
-<tspan x="10" y="1450">[6339:0501/120922.549966:ERROR:browser_gpu_channel_host_factory.cc(125)] Failed to create channe\</tspan>
+<tspan x="10" y="1450">[6340:0501/122753.039934:ERROR:browser_gpu_channel_host_factory.cc(125)] Failed to create channe\</tspan>
 <tspan x="10" y="1466">l.</tspan>
 
 <tspan x="10" y="1482"></tspan>
 
-<tspan x="10" y="1498">browserTest - opened http://127.0.0.1:50481?modeTest=1</tspan>
+<tspan x="10" y="1498">browserTest - opened http://127.0.0.1:45724?modeTest=1</tspan>
 
 <tspan x="10" y="1514"></tspan>
 
-<tspan x="10" y="1530">[6339:0501/120923.320763:INFO:CONSOLE(237)] "[browser test-case 1 of 8 passed] - testCase_buildA\</tspan>
+<tspan x="10" y="1530">[6340:0501/122753.658476:INFO:CONSOLE(237)] "[browser test-case 1 of 8 passed] - testCase_buildA\</tspan>
 <tspan x="10" y="1546">pidoc_default", source: file:///home/travis/build/kaizhu256/node-performance-benchmarks/tmp/elec\</tspan>
-<tspan x="10" y="1562">tron.1631b9b6f600.741905a140466.html (237)</tspan>
+<tspan x="10" y="1562">tron.1631bac62970.3848826612e23.html (237)</tspan>
 
-<tspan x="10" y="1578">[6339:0501/120923.338828:INFO:CONSOLE(237)] "[browser test-case 2 of 8 passed] - testCase_buildA\</tspan>
+<tspan x="10" y="1578">[6340:0501/122753.672132:INFO:CONSOLE(237)] "[browser test-case 2 of 8 passed] - testCase_buildA\</tspan>
 <tspan x="10" y="1594">pp_default", source: file:///home/travis/build/kaizhu256/node-performance-benchmarks/tmp/electro\</tspan>
-<tspan x="10" y="1610">n.1631b9b6f600.741905a140466.html (237)</tspan>
+<tspan x="10" y="1610">n.1631bac62970.3848826612e23.html (237)</tspan>
 
-<tspan x="10" y="1626">[6339:0501/120923.339646:INFO:CONSOLE(237)] "[browser test-case 3 of 8 passed] - testCase_buildC\</tspan>
+<tspan x="10" y="1626">[6340:0501/122753.674323:INFO:CONSOLE(237)] "[browser test-case 3 of 8 passed] - testCase_buildC\</tspan>
 <tspan x="10" y="1642">ustomOrg_default", source: file:///home/travis/build/kaizhu256/node-performance-benchmarks/tmp/e\</tspan>
-<tspan x="10" y="1658">lectron.1631b9b6f600.741905a140466.html (237)</tspan>
+<tspan x="10" y="1658">lectron.1631bac62970.3848826612e23.html (237)</tspan>
 
-<tspan x="10" y="1674">[6339:0501/120923.340997:INFO:CONSOLE(237)] "[browser test-case 4 of 8 passed] - testCase_buildL\</tspan>
+<tspan x="10" y="1674">[6340:0501/122753.676453:INFO:CONSOLE(237)] "[browser test-case 4 of 8 passed] - testCase_buildL\</tspan>
 <tspan x="10" y="1690">ib_default", source: file:///home/travis/build/kaizhu256/node-performance-benchmarks/tmp/electro\</tspan>
-<tspan x="10" y="1706">n.1631b9b6f600.741905a140466.html (237)</tspan>
+<tspan x="10" y="1706">n.1631bac62970.3848826612e23.html (237)</tspan>
 
-<tspan x="10" y="1722">[6339:0501/120923.344167:INFO:CONSOLE(237)] "[browser test-case 5 of 8 passed] - testCase_buildR\</tspan>
+<tspan x="10" y="1722">[6340:0501/122753.678430:INFO:CONSOLE(237)] "[browser test-case 5 of 8 passed] - testCase_buildR\</tspan>
 <tspan x="10" y="1738">eadme_default", source: file:///home/travis/build/kaizhu256/node-performance-benchmarks/tmp/elec\</tspan>
-<tspan x="10" y="1754">tron.1631b9b6f600.741905a140466.html (237)</tspan>
+<tspan x="10" y="1754">tron.1631bac62970.3848826612e23.html (237)</tspan>
 
-<tspan x="10" y="1770">[6339:0501/120923.344689:INFO:CONSOLE(237)] "[browser test-case 6 of 8 passed] - testCase_buildT\</tspan>
+<tspan x="10" y="1770">[6340:0501/122753.680609:INFO:CONSOLE(237)] "[browser test-case 6 of 8 passed] - testCase_buildT\</tspan>
 <tspan x="10" y="1786">est_default", source: file:///home/travis/build/kaizhu256/node-performance-benchmarks/tmp/electr\</tspan>
-<tspan x="10" y="1802">on.1631b9b6f600.741905a140466.html (237)</tspan>
+<tspan x="10" y="1802">on.1631bac62970.3848826612e23.html (237)</tspan>
 
-<tspan x="10" y="1818">[6339:0501/120923.346202:INFO:CONSOLE(237)] "[browser test-case 7 of 8 passed] - testCase_nop_de\</tspan>
+<tspan x="10" y="1818">[6340:0501/122753.682704:INFO:CONSOLE(237)] "[browser test-case 7 of 8 passed] - testCase_nop_de\</tspan>
 <tspan x="10" y="1834">fault", source: file:///home/travis/build/kaizhu256/node-performance-benchmarks/tmp/electron.163\</tspan>
-<tspan x="10" y="1850">1b9b6f600.741905a140466.html (237)</tspan>
+<tspan x="10" y="1850">1bac62970.3848826612e23.html (237)</tspan>
 
-<tspan x="10" y="1866">[6339:0501/120923.354025:INFO:CONSOLE(237)] "domStyleValidateUnmatched 0. 0 .testReportDiv .test\</tspan>
+<tspan x="10" y="1866">[6340:0501/122753.686188:INFO:CONSOLE(237)] "domStyleValidateUnmatched 0. 0 .testReportDiv .test\</tspan>
 <tspan x="10" y="1882">Failed {", source: file:///home/travis/build/kaizhu256/node-performance-benchmarks/tmp/electron.\</tspan>
-<tspan x="10" y="1898">1631b9b6f600.741905a140466.html (237)</tspan>
+<tspan x="10" y="1898">1631bac62970.3848826612e23.html (237)</tspan>
 
-<tspan x="10" y="1914">[6339:0501/120923.354092:INFO:CONSOLE(237)] "domStyleValidateUnmatched 1. 0 .testReportDiv .test\</tspan>
-<tspan x="10" y="1930">Failed {", source: file:///home/travis/build/kaizhu256/node-performance-benchmarks/tmp/electron.\</tspan>
-<tspan x="10" y="1946">1631b9b6f600.741905a140466.html (237)</tspan>
+<tspan x="10" y="1914">[6340:0501/122753.688552:INFO:CONSOLE(237)] "domStyleValidateUnmatched 1. 0 .testReportDiv img {\</tspan>
+<tspan x="10" y="1930">", source: file:///home/travis/build/kaizhu256/node-performance-benchmarks/tmp/electron.1631bac6\</tspan>
+<tspan x="10" y="1946">2970.3848826612e23.html (237)</tspan>
 
-<tspan x="10" y="1962">[6339:0501/120923.354580:INFO:CONSOLE(237)] "domStyleValidateUnmatched 2. 0 .testReportDiv img {\</tspan>
-<tspan x="10" y="1978">", source: file:///home/travis/build/kaizhu256/node-performance-benchmarks/tmp/electron.1631b9b6\</tspan>
-<tspan x="10" y="1994">f600.741905a140466.html (237)</tspan>
+<tspan x="10" y="1962">[6340:0501/122753.690516:INFO:CONSOLE(237)] "domStyleValidateUnmatched 2. 1 .testReportDiv .disp\</tspan>
+<tspan x="10" y="1978">layNone {", source: file:///home/travis/build/kaizhu256/node-performance-benchmarks/tmp/electron\</tspan>
+<tspan x="10" y="1994">.1631bac62970.3848826612e23.html (237)</tspan>
 
-<tspan x="10" y="2010">[6339:0501/120923.356844:INFO:CONSOLE(237)] "domStyleValidateUnmatched 3. 0 .testReportDiv img {\</tspan>
-<tspan x="10" y="2026">", source: file:///home/travis/build/kaizhu256/node-performance-benchmarks/tmp/electron.1631b9b6\</tspan>
-<tspan x="10" y="2042">f600.741905a140466.html (237)</tspan>
+<tspan x="10" y="2010">[6340:0501/122753.696461:INFO:CONSOLE(237)] "domStyleValidateUnmatched 3. 1 .testReportDiv .foot\</tspan>
+<tspan x="10" y="2026">er {", source: file:///home/travis/build/kaizhu256/node-performance-benchmarks/tmp/electron.1631\</tspan>
+<tspan x="10" y="2042">bac62970.3848826612e23.html (237)</tspan>
 
-<tspan x="10" y="2058">[6339:0501/120923.358251:INFO:CONSOLE(237)] "domStyleValidateUnmatched 4. 1 .testReportDiv .disp\</tspan>
-<tspan x="10" y="2074">layNone {", source: file:///home/travis/build/kaizhu256/node-performance-benchmarks/tmp/electron\</tspan>
-<tspan x="10" y="2090">.1631b9b6f600.741905a140466.html (237)</tspan>
+<tspan x="10" y="2058">[6340:0501/122753.698063:INFO:CONSOLE(237)] "domStyleValidateUnmatched 4. 1 .testReportDiv .summ\</tspan>
+<tspan x="10" y="2074">ary {", source: file:///home/travis/build/kaizhu256/node-performance-benchmarks/tmp/electron.163\</tspan>
+<tspan x="10" y="2090">1bac62970.3848826612e23.html (237)</tspan>
 
-<tspan x="10" y="2106">[6339:0501/120923.360101:INFO:CONSOLE(237)] "domStyleValidateUnmatched 5. 1 .testReportDiv .disp\</tspan>
-<tspan x="10" y="2122">layNone {", source: file:///home/travis/build/kaizhu256/node-performance-benchmarks/tmp/electron\</tspan>
-<tspan x="10" y="2138">.1631b9b6f600.741905a140466.html (237)</tspan>
+<tspan x="10" y="2106">[6340:0501/122753.700480:INFO:CONSOLE(237)] "domStyleValidateUnmatched 5. 1 .testReportDiv pre {\</tspan>
+<tspan x="10" y="2122">", source: file:///home/travis/build/kaizhu256/node-performance-benchmarks/tmp/electron.1631bac6\</tspan>
+<tspan x="10" y="2138">2970.3848826612e23.html (237)</tspan>
 
-<tspan x="10" y="2154">[6339:0501/120923.362097:INFO:CONSOLE(237)] "domStyleValidateUnmatched 6. 1 .testReportDiv .foot\</tspan>
-<tspan x="10" y="2170">er {", source: file:///home/travis/build/kaizhu256/node-performance-benchmarks/tmp/electron.1631\</tspan>
-<tspan x="10" y="2186">b9b6f600.741905a140466.html (237)</tspan>
+<tspan x="10" y="2154">[6340:0501/122753.702591:INFO:CONSOLE(237)] "domStyleValidateUnmatched 6. 1 body &gt; pre,", source\</tspan>
+<tspan x="10" y="2170">: file:///home/travis/build/kaizhu256/node-performance-benchmarks/tmp/electron.1631bac62970.3848\</tspan>
+<tspan x="10" y="2186">826612e23.html (237)</tspan>
 
-<tspan x="10" y="2202">[6339:0501/120923.365330:INFO:CONSOLE(237)] "domStyleValidateUnmatched 7. 1 .testReportDiv .foot\</tspan>
-<tspan x="10" y="2218">er {", source: file:///home/travis/build/kaizhu256/node-performance-benchmarks/tmp/electron.1631\</tspan>
-<tspan x="10" y="2234">b9b6f600.741905a140466.html (237)</tspan>
+<tspan x="10" y="2202">[6340:0501/122753.705220:INFO:CONSOLE(237)] "domStyleValidateUnmatched 7. 1 body &gt; pre,", source\</tspan>
+<tspan x="10" y="2218">: file:///home/travis/build/kaizhu256/node-performance-benchmarks/tmp/electron.1631bac62970.3848\</tspan>
+<tspan x="10" y="2234">826612e23.html (237)</tspan>
 
-<tspan x="10" y="2250">[6339:0501/120923.365777:INFO:CONSOLE(237)] "domStyleValidateUnmatched 8. 1 .testReportDiv .summ\</tspan>
-<tspan x="10" y="2266">ary {", source: file:///home/travis/build/kaizhu256/node-performance-benchmarks/tmp/electron.163\</tspan>
-<tspan x="10" y="2282">1b9b6f600.741905a140466.html (237)</tspan>
+<tspan x="10" y="2250">[6340:0501/122753.707511:INFO:CONSOLE(237)] "domStyleValidateUnmatched 8. 1 body {", source: fil\</tspan>
+<tspan x="10" y="2266">e:///home/travis/build/kaizhu256/node-performance-benchmarks/tmp/electron.1631bac62970.384882661\</tspan>
+<tspan x="10" y="2282">2e23.html (237)</tspan>
 
-<tspan x="10" y="2298">[6339:0501/120923.368440:INFO:CONSOLE(237)] "domStyleValidateUnmatched 9. 1 .testReportDiv .summ\</tspan>
-<tspan x="10" y="2314">ary {", source: file:///home/travis/build/kaizhu256/node-performance-benchmarks/tmp/electron.163\</tspan>
-<tspan x="10" y="2330">1b9b6f600.741905a140466.html (237)</tspan>
+<tspan x="10" y="2298">[6340:0501/122753.709888:INFO:CONSOLE(237)] "domStyleValidateUnmatched 9. 1 body {", source: fil\</tspan>
+<tspan x="10" y="2314">e:///home/travis/build/kaizhu256/node-performance-benchmarks/tmp/electron.1631bac62970.384882661\</tspan>
+<tspan x="10" y="2330">2e23.html (237)</tspan>
 
-<tspan x="10" y="2346">[6339:0501/120923.370792:INFO:CONSOLE(237)] "domStyleValidateUnmatched 10. 1 .testReportDiv pre \</tspan>
-<tspan x="10" y="2362">{", source: file:///home/travis/build/kaizhu256/node-performance-benchmarks/tmp/electron.1631b9b\</tspan>
-<tspan x="10" y="2378">6f600.741905a140466.html (237)</tspan>
+<tspan x="10" y="2346">[6340:0501/122753.711938:INFO:CONSOLE(237)] "[browser test-case 8 of 8 passed] - testCase_webpag\</tspan>
+<tspan x="10" y="2362">e_default", source: file:///home/travis/build/kaizhu256/node-performance-benchmarks/tmp/electron\</tspan>
+<tspan x="10" y="2378">.1631bac62970.3848826612e23.html (237)</tspan>
 
-<tspan x="10" y="2394">[6339:0501/120923.373292:INFO:CONSOLE(237)] "domStyleValidateUnmatched 11. 1 .testReportDiv pre \</tspan>
-<tspan x="10" y="2410">{", source: file:///home/travis/build/kaizhu256/node-performance-benchmarks/tmp/electron.1631b9b\</tspan>
-<tspan x="10" y="2426">6f600.741905a140466.html (237)</tspan>
+<tspan x="10" y="2394">[6340:0501/122754.721577:INFO:CONSOLE(237)] "----------|-----------|-----------|-----------|----\</tspan>
+<tspan x="10" y="2410">-------|</tspan>
 
-<tspan x="10" y="2442">[6339:0501/120923.376530:INFO:CONSOLE(237)] "domStyleValidateUnmatched 12. 1 body &gt; pre,", sourc\</tspan>
-<tspan x="10" y="2458">e: file:///home/travis/build/kaizhu256/node-performance-benchmarks/tmp/electron.1631b9b6f600.741\</tspan>
-<tspan x="10" y="2474">905a140466.html (237)</tspan>
+<tspan x="10" y="2426">File      |   % Stmts |% Branches |   % Funcs |   % Lines |</tspan>
 
-<tspan x="10" y="2490">[6339:0501/120923.380127:INFO:CONSOLE(237)] "domStyleValidateUnmatched 13. 1 body &gt; pre,", sourc\</tspan>
-<tspan x="10" y="2506">e: file:///home/travis/build/kaizhu256/node-performance-benchmarks/tmp/electron.1631b9b6f600.741\</tspan>
-<tspan x="10" y="2522">905a140466.html (237)</tspan>
+<tspan x="10" y="2442">----------|-----------|-----------|-----------|-----------|</tspan>
 
-<tspan x="10" y="2538">[6339:0501/120923.383585:INFO:CONSOLE(237)] "domStyleValidateUnmatched 14. 1 body {", source: fi\</tspan>
-<tspan x="10" y="2554">le:///home/travis/build/kaizhu256/node-performance-benchmarks/tmp/electron.1631b9b6f600.741905a1\</tspan>
-<tspan x="10" y="2570">40466.html (237)</tspan>
+<tspan x="10" y="2458">----------|-----------|-----------|-----------|-----------|</tspan>
 
-<tspan x="10" y="2586">[6339:0501/120923.386918:INFO:CONSOLE(237)] "domStyleValidateUnmatched 15. 1 body {", source: fi\</tspan>
-<tspan x="10" y="2602">le:///home/travis/build/kaizhu256/node-performance-benchmarks/tmp/electron.1631b9b6f600.741905a1\</tspan>
-<tspan x="10" y="2618">40466.html (237)</tspan>
+<tspan x="10" y="2474">All files |       100 |       100 |       100 |       100 |</tspan>
 
-<tspan x="10" y="2634">[6339:0501/120923.390707:INFO:CONSOLE(237)] "[browser test-case 8 of 8 passed] - testCase_webpag\</tspan>
-<tspan x="10" y="2650">e_default", source: file:///home/travis/build/kaizhu256/node-performance-benchmarks/tmp/electron\</tspan>
-<tspan x="10" y="2666">.1631b9b6f600.741905a140466.html (237)</tspan>
+<tspan x="10" y="2490">----------|-----------|-----------|-----------|-----------|</tspan>
 
-<tspan x="10" y="2682">[6339:0501/120924.405352:INFO:CONSOLE(237)] "----------|-----------|-----------|-----------|----\</tspan>
-<tspan x="10" y="2698">-------|</tspan>
+<tspan x="10" y="2506">", source: file:///home/travis/build/kaizhu256/node-performance-benchmarks/tmp/electron.1631bac6\</tspan>
+<tspan x="10" y="2522">2970.3848826612e23.html (237)</tspan>
 
-<tspan x="10" y="2714">File      |   % Stmts |% Branches |   % Funcs |   % Lines |</tspan>
+<tspan x="10" y="2538">[6340:0501/122754.728541:INFO:CONSOLE(237)] "created coverage file /tmp/build/coverage.html/inde\</tspan>
+<tspan x="10" y="2554">x.html", source: file:///home/travis/build/kaizhu256/node-performance-benchmarks/tmp/electron.16\</tspan>
+<tspan x="10" y="2570">31bac62970.3848826612e23.html (237)</tspan>
 
-<tspan x="10" y="2730">----------|-----------|-----------|-----------|-----------|</tspan>
+<tspan x="10" y="2586">[node test-case 7 of 8 passed] - testCase_buildApp_default</tspan>
 
-<tspan x="10" y="2746">----------|-----------|-----------|-----------|-----------|</tspan>
+<tspan x="10" y="2602"></tspan>
 
-<tspan x="10" y="2762">All files |       100 |       100 |       100 |       100 |</tspan>
+<tspan x="10" y="2618">browserTest - created screenshot file /home/travis/build/kaizhu256/node-performance-benchmarks/t\</tspan>
+<tspan x="10" y="2634">mp/build/screenshot.npmTest.browser.%2F.png</tspan>
 
-<tspan x="10" y="2778">----------|-----------|-----------|-----------|-----------|</tspan>
+<tspan x="10" y="2650"></tspan>
 
-<tspan x="10" y="2794">", source: file:///home/travis/build/kaizhu256/node-performance-benchmarks/tmp/electron.1631b9b6\</tspan>
-<tspan x="10" y="2810">f600.741905a140466.html (237)</tspan>
+<tspan x="10" y="2666">browserTest - created screenshot file /home/travis/build/kaizhu256/node-performance-benchmarks/t\</tspan>
+<tspan x="10" y="2682">mp/build/screenshot.npmTest.browser.%2F.html</tspan>
 
-<tspan x="10" y="2826">[6339:0501/120924.416704:INFO:CONSOLE(237)] "created coverage file /tmp/build/coverage.html/inde\</tspan>
-<tspan x="10" y="2842">x.html", source: file:///home/travis/build/kaizhu256/node-performance-benchmarks/tmp/electron.16\</tspan>
-<tspan x="10" y="2858">31b9b6f600.741905a140466.html (237)</tspan>
+<tspan x="10" y="2698"></tspan>
 
-<tspan x="10" y="2874">[node test-case 7 of 8 passed] - testCase_buildApp_default</tspan>
+<tspan x="10" y="2714">browserTest - exit-code 0 - http://127.0.0.1:45724?modeTest=1</tspan>
 
-<tspan x="10" y="2890"></tspan>
+<tspan x="10" y="2730"></tspan>
 
-<tspan x="10" y="2906">browserTest - created screenshot file /home/travis/build/kaizhu256/node-performance-benchmarks/t\</tspan>
-<tspan x="10" y="2922">mp/build/screenshot.npmTest.browser.%2F.png</tspan>
+<tspan x="10" y="2746"></tspan>
 
-<tspan x="10" y="2938"></tspan>
+<tspan x="10" y="2762">browserTest - merged coverage from file /home/travis/build/kaizhu256/node-performance-benchmarks\</tspan>
+<tspan x="10" y="2778">/tmp/coverage.npmTest.browser.%2F.json</tspan>
 
-<tspan x="10" y="2954">browserTest - created screenshot file /home/travis/build/kaizhu256/node-performance-benchmarks/t\</tspan>
-<tspan x="10" y="2970">mp/build/screenshot.npmTest.browser.%2F.html</tspan>
+<tspan x="10" y="2794"></tspan>
 
-<tspan x="10" y="2986"></tspan>
+<tspan x="10" y="2810"></tspan>
 
-<tspan x="10" y="3002">browserTest - exit-code 0 - http://127.0.0.1:50481?modeTest=1</tspan>
+<tspan x="10" y="2826">browserTest - merged test-report from file /home/travis/build/kaizhu256/node-performance-benchma\</tspan>
+<tspan x="10" y="2842">rks/tmp/test-report.npmTest.browser.%2F.json</tspan>
 
-<tspan x="10" y="3018"></tspan>
+<tspan x="10" y="2858"></tspan>
 
-<tspan x="10" y="3034"></tspan>
+<tspan x="10" y="2874">[node test-case 8 of 8 passed] - testCase_webpage_default</tspan>
 
-<tspan x="10" y="3050">browserTest - merged coverage from file /home/travis/build/kaizhu256/node-performance-benchmarks\</tspan>
-<tspan x="10" y="3066">/tmp/coverage.npmTest.browser.%2F.json</tspan>
+<tspan x="10" y="2890">------------------------------------|-----------|-----------|-----------|-----------|</tspan>
 
-<tspan x="10" y="3082"></tspan>
+<tspan x="10" y="2906">File                                |   % Stmts |% Branches |   % Funcs |   % Lines |</tspan>
+
+<tspan x="10" y="2922">------------------------------------|-----------|-----------|-----------|-----------|</tspan>
+
+<tspan x="10" y="2938">   node-performance-benchmarks/     |       100 |       100 |       100 |       100 |</tspan>
+
+<tspan x="10" y="2954">      example.js                    |       100 |       100 |       100 |       100 |</tspan>
+
+<tspan x="10" y="2970">      lib.performance_benchmarks.js |       100 |       100 |       100 |       100 |</tspan>
+
+<tspan x="10" y="2986">      test.js                       |       100 |       100 |       100 |       100 |</tspan>
+
+<tspan x="10" y="3002">------------------------------------|-----------|-----------|-----------|-----------|</tspan>
+
+<tspan x="10" y="3018">All files                           |       100 |       100 |       100 |       100 |</tspan>
+
+<tspan x="10" y="3034">------------------------------------|-----------|-----------|-----------|-----------|</tspan>
+
+<tspan x="10" y="3050"></tspan>
+
+<tspan x="10" y="3066">created coverage file /home/travis/build/kaizhu256/node-performance-benchmarks/tmp/build/coverag\</tspan>
+<tspan x="10" y="3082">e.html/index.html</tspan>
 
 <tspan x="10" y="3098"></tspan>
 
-<tspan x="10" y="3114">browserTest - merged test-report from file /home/travis/build/kaizhu256/node-performance-benchma\</tspan>
-<tspan x="10" y="3130">rks/tmp/test-report.npmTest.browser.%2F.json</tspan>
+<tspan x="10" y="3114">npmTest - merged test-report from file /home/travis/build/kaizhu256/node-performance-benchmarks/\</tspan>
+<tspan x="10" y="3130">tmp/build/test-report.json</tspan>
 
 <tspan x="10" y="3146"></tspan>
 
-<tspan x="10" y="3162">[node test-case 8 of 8 passed] - testCase_webpage_default</tspan>
+<tspan x="10" y="3162">-------------------------------------------------------</tspan>
 
-<tspan x="10" y="3178">------------------------------------|-----------|-----------|-----------|-----------|</tspan>
+<tspan x="10" y="3178">| test-report - buildApp - node - linux v10.0.0 - 2018-05-01T12:26:48.351Z</tspan>
 
-<tspan x="10" y="3194">File                                |   % Stmts |% Branches |   % Funcs |   % Lines |</tspan>
+<tspan x="10" y="3194">|   80032 ms            0 failed        8 passed      |</tspan>
 
-<tspan x="10" y="3210">------------------------------------|-----------|-----------|-----------|-----------|</tspan>
+<tspan x="10" y="3210">-------------------------------------------------------</tspan>
 
-<tspan x="10" y="3226">   node-performance-benchmarks/     |       100 |       100 |       100 |       100 |</tspan>
+<tspan x="10" y="3226">| test-report - npmTest - browser - / - Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTM\</tspan>
+<tspan x="10" y="3242">L, like Gecko) Chrome/58.0.3029.110 Electron/1.7.14 Safari/537.36 - 2018-05-01T12:27:53.594Z</tspan>
 
-<tspan x="10" y="3242">      example.js                    |       100 |       100 |       100 |       100 |</tspan>
+<tspan x="10" y="3258">|      64 ms            0 failed        8 passed      |</tspan>
 
-<tspan x="10" y="3258">      lib.performance_benchmarks.js |       100 |       100 |       100 |       100 |</tspan>
+<tspan x="10" y="3274">-------------------------------------------------------</tspan>
 
-<tspan x="10" y="3274">      test.js                       |       100 |       100 |       100 |       100 |</tspan>
+<tspan x="10" y="3290"></tspan>
 
-<tspan x="10" y="3290">------------------------------------|-----------|-----------|-----------|-----------|</tspan>
-
-<tspan x="10" y="3306">All files                           |       100 |       100 |       100 |       100 |</tspan>
-
-<tspan x="10" y="3322">------------------------------------|-----------|-----------|-----------|-----------|</tspan>
+<tspan x="10" y="3306">created test-report file /home/travis/build/kaizhu256/node-performance-benchmarks/tmp/build/test\</tspan>
+<tspan x="10" y="3322">-report.html</tspan>
 
 <tspan x="10" y="3338"></tspan>
 
-<tspan x="10" y="3354">created coverage file /home/travis/build/kaizhu256/node-performance-benchmarks/tmp/build/coverag\</tspan>
-<tspan x="10" y="3370">e.html/index.html</tspan>
+<tspan x="10" y="3354"></tspan>
+
+<tspan x="10" y="3370">npmTest - 0 failed tests</tspan>
 
 <tspan x="10" y="3386"></tspan>
 
-<tspan x="10" y="3402">npmTest - merged test-report from file /home/travis/build/kaizhu256/node-performance-benchmarks/\</tspan>
-<tspan x="10" y="3418">tmp/build/test-report.json</tspan>
+<tspan x="10" y="3402"></tspan>
 
-<tspan x="10" y="3434"></tspan>
-
-<tspan x="10" y="3450">-------------------------------------------------------</tspan>
-
-<tspan x="10" y="3466">| test-report - buildApp - node - linux v10.0.0 - 2018-05-01T12:08:17.311Z</tspan>
-
-<tspan x="10" y="3482">|   80569 ms            0 failed        8 passed      |</tspan>
-
-<tspan x="10" y="3498">-------------------------------------------------------</tspan>
-
-<tspan x="10" y="3514">| test-report - npmTest - browser - / - Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTM\</tspan>
-<tspan x="10" y="3530">L, like Gecko) Chrome/58.0.3029.110 Electron/1.7.14 Safari/537.36 - 2018-05-01T12:09:23.239Z</tspan>
-
-<tspan x="10" y="3546">|      83 ms            0 failed        8 passed      |</tspan>
-
-<tspan x="10" y="3562">-------------------------------------------------------</tspan>
-
-<tspan x="10" y="3578"></tspan>
-
-<tspan x="10" y="3594">created test-report file /home/travis/build/kaizhu256/node-performance-benchmarks/tmp/build/test\</tspan>
-<tspan x="10" y="3610">-report.html</tspan>
-
-<tspan x="10" y="3626"></tspan>
-
-<tspan x="10" y="3642"></tspan>
-
-<tspan x="10" y="3658">npmTest - 0 failed tests</tspan>
-
-<tspan x="10" y="3674"></tspan>
-
-<tspan x="10" y="3690"></tspan>
-
-<tspan x="10" y="3706">[MODE_BUILD=npmTest] - 2018-05-01T12:09:39.420Z - EXIT_CODE - 0</tspan>
+<tspan x="10" y="3418">[MODE_BUILD=npmTest] - 2018-05-01T12:28:09.835Z - EXIT_CODE - 0</tspan>
 
 </text>
 </svg>

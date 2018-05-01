@@ -15717,52 +15717,6 @@ textarea {\n\
 .colorError {\n\
     color: #d00;\n\
 }\n\
-.testReportDiv img {\n\
-    border: 1px solid black;\n\
-    margin: 5px 0 5px 0;\n\
-    max-height: 256px;\n\
-    max-width: 512px;\n\
-}\n\
-.testReportDiv pre {\n\
-    background: #fdd;\n\
-    border-top: 1px solid black;\n\
-    margin-bottom: 0;\n\
-    padding: 10px;\n\
-}\n\
-.testReportDiv span {\n\
-    display: inline-block;\n\
-    width: 120px;\n\
-}\n\
-.testReportDiv table {\n\
-    border-top: 1px solid black;\n\
-    text-align: left;\n\
-    width: 100%;\n\
-}\n\
-.testReportDiv table > tbody > tr:nth-child(odd) {\n\
-    background: #bfb;\n\
-}\n\
-.testReportDiv .displayNone {\n\
-    display: none;\n\
-}\n\
-.testReportDiv .footer {\n\
-    text-align: center;\n\
-}\n\
-.testReportDiv .platform {\n\
-    background: #fff;\n\
-    border: 1px solid black;\n\
-    margin-bottom: 20px;\n\
-    padding: 0 10px 10px 10px;\n\
-    text-align: left;\n\
-}\n\
-.testReportDiv .summary {\n\
-    background: #bfb;\n\
-}\n\
-.testReportDiv .testFailed {\n\
-    background: #f99;\n\
-}\n\
-.testReportDiv .testPending {\n\
-    background: #99f;\n\
-}\n\
 .uiAnimateShake {\n\
     animation-duration: 500ms;\n\
     animation-name: uiAnimateShake;\n\
@@ -16815,6 +16769,59 @@ local.assetsDict['/assets.testReport.template.html'] =
     local.assetsDict['/assets.utility2.template.html']
     .replace('assets.utility2.template.html', '')
     .replace((/<title>.*?<\/title>/), '<title>test-report</title>')
+    .replace('</style>\n', '\
+<style>\n\
+/* jslint-utility2 */\n\
+/*csslint\n\
+*/\n\
+.testReportDiv img {\n\
+    border: 1px solid black;\n\
+    margin: 5px 0 5px 0;\n\
+    max-height: 256px;\n\
+    max-width: 512px;\n\
+}\n\
+.testReportDiv pre {\n\
+    background: #fdd;\n\
+    border-top: 1px solid black;\n\
+    margin-bottom: 0;\n\
+    padding: 10px;\n\
+}\n\
+.testReportDiv span {\n\
+    display: inline-block;\n\
+    width: 120px;\n\
+}\n\
+.testReportDiv table {\n\
+    border-top: 1px solid black;\n\
+    text-align: left;\n\
+    width: 100%;\n\
+}\n\
+.testReportDiv table > tbody > tr:nth-child(odd) {\n\
+    background: #bfb;\n\
+}\n\
+.testReportDiv .displayNone {\n\
+    display: none;\n\
+}\n\
+.testReportDiv .footer {\n\
+    text-align: center;\n\
+}\n\
+.testReportDiv .platform {\n\
+    background: #fff;\n\
+    border: 1px solid black;\n\
+    margin-bottom: 20px;\n\
+    padding: 0 10px 10px 10px;\n\
+    text-align: left;\n\
+}\n\
+.testReportDiv .summary {\n\
+    background: #bfb;\n\
+}\n\
+.testReportDiv .testFailed {\n\
+    background: #f99;\n\
+}\n\
+.testReportDiv .testPending {\n\
+    background: #99f;\n\
+}\n\
+</style>\n\
+'.replace('<style>\n', ''))
     .replace((/<\/script>[\S\s]*?<\/body>/), '\
 </script>\n\
 <div class="testReportDiv">\n\
@@ -29012,98 +29019,6 @@ textarea {\\n\
 \\\n\
 }\\n\
 \\\n\
-.testReportDiv img {\\n\
-\\\n\
-    border: 1px solid black;\\n\
-\\\n\
-    margin: 5px 0 5px 0;\\n\
-\\\n\
-    max-height: 256px;\\n\
-\\\n\
-    max-width: 512px;\\n\
-\\\n\
-}\\n\
-\\\n\
-.testReportDiv pre {\\n\
-\\\n\
-    background: #fdd;\\n\
-\\\n\
-    border-top: 1px solid black;\\n\
-\\\n\
-    margin-bottom: 0;\\n\
-\\\n\
-    padding: 10px;\\n\
-\\\n\
-}\\n\
-\\\n\
-.testReportDiv span {\\n\
-\\\n\
-    display: inline-block;\\n\
-\\\n\
-    width: 120px;\\n\
-\\\n\
-}\\n\
-\\\n\
-.testReportDiv table {\\n\
-\\\n\
-    border-top: 1px solid black;\\n\
-\\\n\
-    text-align: left;\\n\
-\\\n\
-    width: 100%;\\n\
-\\\n\
-}\\n\
-\\\n\
-.testReportDiv table > tbody > tr:nth-child(odd) {\\n\
-\\\n\
-    background: #bfb;\\n\
-\\\n\
-}\\n\
-\\\n\
-.testReportDiv .displayNone {\\n\
-\\\n\
-    display: none;\\n\
-\\\n\
-}\\n\
-\\\n\
-.testReportDiv .footer {\\n\
-\\\n\
-    text-align: center;\\n\
-\\\n\
-}\\n\
-\\\n\
-.testReportDiv .platform {\\n\
-\\\n\
-    background: #fff;\\n\
-\\\n\
-    border: 1px solid black;\\n\
-\\\n\
-    margin-bottom: 20px;\\n\
-\\\n\
-    padding: 0 10px 10px 10px;\\n\
-\\\n\
-    text-align: left;\\n\
-\\\n\
-}\\n\
-\\\n\
-.testReportDiv .summary {\\n\
-\\\n\
-    background: #bfb;\\n\
-\\\n\
-}\\n\
-\\\n\
-.testReportDiv .testFailed {\\n\
-\\\n\
-    background: #f99;\\n\
-\\\n\
-}\\n\
-\\\n\
-.testReportDiv .testPending {\\n\
-\\\n\
-    background: #99f;\\n\
-\\\n\
-}\\n\
-\\\n\
 .uiAnimateShake {\\n\
 \\\n\
     animation-duration: 500ms;\\n\
@@ -29701,52 +29616,6 @@ textarea {\n\
 }\n\
 .colorError {\n\
     color: #d00;\n\
-}\n\
-.testReportDiv img {\n\
-    border: 1px solid black;\n\
-    margin: 5px 0 5px 0;\n\
-    max-height: 256px;\n\
-    max-width: 512px;\n\
-}\n\
-.testReportDiv pre {\n\
-    background: #fdd;\n\
-    border-top: 1px solid black;\n\
-    margin-bottom: 0;\n\
-    padding: 10px;\n\
-}\n\
-.testReportDiv span {\n\
-    display: inline-block;\n\
-    width: 120px;\n\
-}\n\
-.testReportDiv table {\n\
-    border-top: 1px solid black;\n\
-    text-align: left;\n\
-    width: 100%;\n\
-}\n\
-.testReportDiv table > tbody > tr:nth-child(odd) {\n\
-    background: #bfb;\n\
-}\n\
-.testReportDiv .displayNone {\n\
-    display: none;\n\
-}\n\
-.testReportDiv .footer {\n\
-    text-align: center;\n\
-}\n\
-.testReportDiv .platform {\n\
-    background: #fff;\n\
-    border: 1px solid black;\n\
-    margin-bottom: 20px;\n\
-    padding: 0 10px 10px 10px;\n\
-    text-align: left;\n\
-}\n\
-.testReportDiv .summary {\n\
-    background: #bfb;\n\
-}\n\
-.testReportDiv .testFailed {\n\
-    background: #f99;\n\
-}\n\
-.testReportDiv .testPending {\n\
-    background: #99f;\n\
 }\n\
 .uiAnimateShake {\n\
     animation-duration: 500ms;\n\

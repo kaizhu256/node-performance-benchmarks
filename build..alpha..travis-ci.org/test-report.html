@@ -96,6 +96,27 @@ textarea {
 .colorError {
     color: #d00;
 }
+.uiAnimateShake {
+    animation-duration: 500ms;
+    animation-name: uiAnimateShake;
+}
+.uiAnimateSlide {
+    overflow-y: hidden;
+    transition: max-height ease-in 250ms, min-height ease-in 250ms, padding-bottom ease-in 250ms, padding-top ease-in 250ms;
+}
+.utility2FooterDiv {
+    text-align: center;
+}
+.zeroPixel {
+    border: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
+    width: 0;
+}
+/* jslint-utility2 */
+/*csslint
+*/
 .testReportDiv img {
     border: 1px solid black;
     margin: 5px 0 5px 0;
@@ -141,24 +162,6 @@ textarea {
 }
 .testReportDiv .testPending {
     background: #99f;
-}
-.uiAnimateShake {
-    animation-duration: 500ms;
-    animation-name: uiAnimateShake;
-}
-.uiAnimateSlide {
-    overflow-y: hidden;
-    transition: max-height ease-in 250ms, min-height ease-in 250ms, padding-bottom ease-in 250ms, padding-top ease-in 250ms;
-}
-.utility2FooterDiv {
-    text-align: center;
-}
-.zeroPixel {
-    border: 0;
-    height: 0;
-    margin: 0;
-    padding: 0;
-    width: 0;
 }
 </style>
 </head>
@@ -255,7 +258,7 @@ textarea {
 <h4>
     <span>version</span>-
         2018.5.1<br>
-    <span>test date</span>- 2018-05-01T12:11:38.733Z<br>
+    <span>test date</span>- 2018-05-01T12:29:06.044Z<br>
     <span>commit info</span>-
         
         0fb45ddd747e6ef2bed34a784293b417ee26d83e - [build app]<br>
@@ -271,9 +274,9 @@ textarea {
     </tr>
 </thead>
 <tbody><tr>
-    <td>217773 ms</td>
+    <td>144444 ms</td>
     <td class="testPassed">0</td>
-    <td>25</td>
+    <td>17</td>
     <td>0</td>
 </tr></tbody>
 </table>
@@ -281,14 +284,14 @@ textarea {
 
 <div class="platform">
 <h4>
-    1. buildApidoc - node - linux v10.0.0 - 2018-05-01T12:09:41.020Z<br>
+    1. buildApidoc - node - linux v10.0.0 - 2018-05-01T12:28:11.199Z<br>
     
     <a href="screenshot.buildApidoc.svg">
         <img alt="screenshot.buildApidoc.svg" src="screenshot.buildApidoc.svg">
     </a>
     <br>
     
-    <span>time-elapsed</span>- 134078 ms<br>
+    <span>time-elapsed</span>- 61579 ms<br>
     <span>tests failed</span>- 0<br>
     <span>tests passed</span>- 1<br>
     <span>tests pending</span>- 0<br>
@@ -304,7 +307,7 @@ textarea {
 
 <tr>
     <td>1</td>
-    <td>5609 ms</td>
+    <td>5524 ms</td>
     <td class="testPassed">passed</td>
     <td>testCase_buildApp_default</td>
 </tr>
@@ -318,14 +321,14 @@ textarea {
 
 <div class="platform">
 <h4>
-    2. buildApp - node - linux v10.0.0 - 2018-05-01T12:08:17.311Z<br>
+    2. buildApp - node - linux v10.0.0 - 2018-05-01T12:26:48.351Z<br>
     
     <a href="screenshot.buildApp.svg">
         <img alt="screenshot.buildApp.svg" src="screenshot.buildApp.svg">
     </a>
     <br>
     
-    <span>time-elapsed</span>- 217773 ms<br>
+    <span>time-elapsed</span>- 144444 ms<br>
     <span>tests failed</span>- 0<br>
     <span>tests passed</span>- 8<br>
     <span>tests pending</span>- 0<br>
@@ -341,14 +344,14 @@ textarea {
 
 <tr>
     <td>2</td>
-    <td>102 ms</td>
+    <td>122 ms</td>
     <td class="testPassed">passed</td>
     <td>testCase_buildApidoc_default</td>
 </tr>
 
 <tr>
     <td>3</td>
-    <td>5840 ms</td>
+    <td>5631 ms</td>
     <td class="testPassed">passed</td>
     <td>testCase_buildApp_default</td>
 </tr>
@@ -369,7 +372,7 @@ textarea {
 
 <tr>
     <td>6</td>
-    <td>11 ms</td>
+    <td>10 ms</td>
     <td class="testPassed">passed</td>
     <td>testCase_buildReadme_default</td>
 </tr>
@@ -390,7 +393,7 @@ textarea {
 
 <tr>
     <td>9</td>
-    <td>16568 ms</td>
+    <td>16175 ms</td>
     <td class="testPassed">passed</td>
     <td>testCase_webpage_default</td>
 </tr>
@@ -404,14 +407,14 @@ textarea {
 
 <div class="platform">
 <h4>
-    3. deployGithubTest - browser - /node-performance-benchmarks/build..alpha..travis-ci.org/app/ - Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Electron/1.7.14 Safari/537.36 - 2018-05-01T12:11:40.184Z<br>
+    3. npmTest - browser - / - Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Electron/1.7.14 Safari/537.36 - 2018-05-01T12:27:53.594Z<br>
     
-    <a href="screenshot.deployGithubTest.browser.%252Fnode-performance-benchmarks%252Fbuild%252Fapp.png">
-        <img alt="screenshot.deployGithubTest.browser.%252Fnode-performance-benchmarks%252Fbuild%252Fapp.png" src="screenshot.deployGithubTest.browser.%252Fnode-performance-benchmarks%252Fbuild%252Fapp.png">
+    <a href="screenshot.npmTest.browser.%252F.png">
+        <img alt="screenshot.npmTest.browser.%252F.png" src="screenshot.npmTest.browser.%252F.png">
     </a>
     <br>
     
-    <span>time-elapsed</span>- 15023 ms<br>
+    <span>time-elapsed</span>- 79275 ms<br>
     <span>tests failed</span>- 0<br>
     <span>tests passed</span>- 8<br>
     <span>tests pending</span>- 0<br>
@@ -427,21 +430,21 @@ textarea {
 
 <tr>
     <td>10</td>
-    <td>1 ms</td>
+    <td>0 ms</td>
     <td class="testPassed">passed</td>
     <td>testCase_buildApidoc_default</td>
 </tr>
 
 <tr>
     <td>11</td>
-    <td>1 ms</td>
+    <td>0 ms</td>
     <td class="testPassed">passed</td>
     <td>testCase_buildApp_default</td>
 </tr>
 
 <tr>
     <td>12</td>
-    <td>2 ms</td>
+    <td>0 ms</td>
     <td class="testPassed">passed</td>
     <td>testCase_buildCustomOrg_default</td>
 </tr>
@@ -469,100 +472,14 @@ textarea {
 
 <tr>
     <td>16</td>
-    <td>0 ms</td>
+    <td>1 ms</td>
     <td class="testPassed">passed</td>
     <td>testCase_nop_default</td>
 </tr>
 
 <tr>
     <td>17</td>
-    <td>42 ms</td>
-    <td class="testPassed">passed</td>
-    <td>testCase_webpage_default</td>
-</tr>
-
-</tbody>
-</table>
-<pre class="displayNone" tabIndex="0">
-
-</pre>
-</div>
-
-<div class="platform">
-<h4>
-    4. npmTest - browser - / - Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Electron/1.7.14 Safari/537.36 - 2018-05-01T12:09:23.239Z<br>
-    
-    <a href="screenshot.npmTest.browser.%252F.png">
-        <img alt="screenshot.npmTest.browser.%252F.png" src="screenshot.npmTest.browser.%252F.png">
-    </a>
-    <br>
-    
-    <span>time-elapsed</span>- 151961 ms<br>
-    <span>tests failed</span>- 0<br>
-    <span>tests passed</span>- 8<br>
-    <span>tests pending</span>- 0<br>
-</h4>
-<table>
-<thead><tr>
-    <th>#</th>
-    <th>time-elapsed</th>
-    <th>status</th>
-    <th>test-case</th>
-</tr></thead>
-<tbody>
-
-<tr>
-    <td>18</td>
-    <td>0 ms</td>
-    <td class="testPassed">passed</td>
-    <td>testCase_buildApidoc_default</td>
-</tr>
-
-<tr>
-    <td>19</td>
-    <td>0 ms</td>
-    <td class="testPassed">passed</td>
-    <td>testCase_buildApp_default</td>
-</tr>
-
-<tr>
-    <td>20</td>
-    <td>0 ms</td>
-    <td class="testPassed">passed</td>
-    <td>testCase_buildCustomOrg_default</td>
-</tr>
-
-<tr>
-    <td>21</td>
-    <td>1 ms</td>
-    <td class="testPassed">passed</td>
-    <td>testCase_buildLib_default</td>
-</tr>
-
-<tr>
-    <td>22</td>
-    <td>0 ms</td>
-    <td class="testPassed">passed</td>
-    <td>testCase_buildReadme_default</td>
-</tr>
-
-<tr>
-    <td>23</td>
-    <td>0 ms</td>
-    <td class="testPassed">passed</td>
-    <td>testCase_buildTest_default</td>
-</tr>
-
-<tr>
-    <td>24</td>
-    <td>0 ms</td>
-    <td class="testPassed">passed</td>
-    <td>testCase_nop_default</td>
-</tr>
-
-<tr>
-    <td>25</td>
-    <td>43 ms</td>
+    <td>25 ms</td>
     <td class="testPassed">passed</td>
     <td>testCase_webpage_default</td>
 </tr>

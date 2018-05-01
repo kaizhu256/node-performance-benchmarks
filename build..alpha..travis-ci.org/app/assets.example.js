@@ -390,52 +390,6 @@ textarea {\n\
 .colorError {\n\
     color: #d00;\n\
 }\n\
-.testReportDiv img {\n\
-    border: 1px solid black;\n\
-    margin: 5px 0 5px 0;\n\
-    max-height: 256px;\n\
-    max-width: 512px;\n\
-}\n\
-.testReportDiv pre {\n\
-    background: #fdd;\n\
-    border-top: 1px solid black;\n\
-    margin-bottom: 0;\n\
-    padding: 10px;\n\
-}\n\
-.testReportDiv span {\n\
-    display: inline-block;\n\
-    width: 120px;\n\
-}\n\
-.testReportDiv table {\n\
-    border-top: 1px solid black;\n\
-    text-align: left;\n\
-    width: 100%;\n\
-}\n\
-.testReportDiv table > tbody > tr:nth-child(odd) {\n\
-    background: #bfb;\n\
-}\n\
-.testReportDiv .displayNone {\n\
-    display: none;\n\
-}\n\
-.testReportDiv .footer {\n\
-    text-align: center;\n\
-}\n\
-.testReportDiv .platform {\n\
-    background: #fff;\n\
-    border: 1px solid black;\n\
-    margin-bottom: 20px;\n\
-    padding: 0 10px 10px 10px;\n\
-    text-align: left;\n\
-}\n\
-.testReportDiv .summary {\n\
-    background: #bfb;\n\
-}\n\
-.testReportDiv .testFailed {\n\
-    background: #f99;\n\
-}\n\
-.testReportDiv .testPending {\n\
-    background: #99f;\n\
-}\n\
 .uiAnimateShake {\n\
     animation-duration: 500ms;\n\
     animation-name: uiAnimateShake;\n\

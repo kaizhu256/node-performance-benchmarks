@@ -94,6 +94,27 @@ textarea {
 .colorError {
     color: #d00;
 }
+.uiAnimateShake {
+    animation-duration: 500ms;
+    animation-name: uiAnimateShake;
+}
+.uiAnimateSlide {
+    overflow-y: hidden;
+    transition: max-height ease-in 250ms, min-height ease-in 250ms, padding-bottom ease-in 250ms, padding-top ease-in 250ms;
+}
+.utility2FooterDiv {
+    text-align: center;
+}
+.zeroPixel {
+    border: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
+    width: 0;
+}
+/* jslint-utility2 */
+/*csslint
+*/
 .testReportDiv img {
     border: 1px solid black;
     margin: 5px 0 5px 0;
@@ -139,24 +160,6 @@ textarea {
 }
 .testReportDiv .testPending {
     background: #99f;
-}
-.uiAnimateShake {
-    animation-duration: 500ms;
-    animation-name: uiAnimateShake;
-}
-.uiAnimateSlide {
-    overflow-y: hidden;
-    transition: max-height ease-in 250ms, min-height ease-in 250ms, padding-bottom ease-in 250ms, padding-top ease-in 250ms;
-}
-.utility2FooterDiv {
-    text-align: center;
-}
-.zeroPixel {
-    border: 0;
-    height: 0;
-    margin: 0;
-    padding: 0;
-    width: 0;
 }
 </style>
 </head>
@@ -249,7 +252,7 @@ textarea {
 <h4>
     <span>version</span>-
         2018.5.1<br>
-    <span>test date</span>- 2018-05-01T12:09:41.024Z<br>
+    <span>test date</span>- 2018-05-01T12:28:11.203Z<br>
     <span>commit info</span>-
         
         0fb45ddd747e6ef2bed34a784293b417ee26d83e - [build app]<br>
@@ -265,7 +268,7 @@ textarea {
     </tr>
 </thead>
 <tbody><tr>
-    <td>85086 ms</td>
+    <td>84204 ms</td>
     <td class="testPassed">0</td>
     <td>17</td>
     <td>0</td>
@@ -275,14 +278,14 @@ textarea {
 
 <div class="platform">
 <h4>
-    1. buildApidoc - node - linux v10.0.0 - 2018-05-01T12:09:41.020Z<br>
+    1. buildApidoc - node - linux v10.0.0 - 2018-05-01T12:28:11.199Z<br>
     
     <a href="screenshot.buildApidoc.svg">
         <img alt="screenshot.buildApidoc.svg" src="screenshot.buildApidoc.svg">
     </a>
     <br>
     
-    <span>time-elapsed</span>- 1391 ms<br>
+    <span>time-elapsed</span>- 1339 ms<br>
     <span>tests failed</span>- 0<br>
     <span>tests passed</span>- 1<br>
     <span>tests pending</span>- 0<br>
@@ -298,7 +301,7 @@ textarea {
 
 <tr>
     <td>1</td>
-    <td>147 ms</td>
+    <td>114 ms</td>
     <td class="testPassed">passed</td>
     <td>testCase_buildApidoc_default</td>
 </tr>
@@ -311,14 +314,14 @@ textarea {
 
 <div class="platform">
 <h4>
-    2. buildApp - node - linux v10.0.0 - 2018-05-01T12:08:17.311Z<br>
+    2. buildApp - node - linux v10.0.0 - 2018-05-01T12:26:48.351Z<br>
     
     <a href="screenshot.buildApp.svg">
         <img alt="screenshot.buildApp.svg" src="screenshot.buildApp.svg">
     </a>
     <br>
     
-    <span>time-elapsed</span>- 85086 ms<br>
+    <span>time-elapsed</span>- 84204 ms<br>
     <span>tests failed</span>- 0<br>
     <span>tests passed</span>- 8<br>
     <span>tests pending</span>- 0<br>
@@ -334,14 +337,14 @@ textarea {
 
 <tr>
     <td>2</td>
-    <td>102 ms</td>
+    <td>122 ms</td>
     <td class="testPassed">passed</td>
     <td>testCase_buildApidoc_default</td>
 </tr>
 
 <tr>
     <td>3</td>
-    <td>5840 ms</td>
+    <td>5631 ms</td>
     <td class="testPassed">passed</td>
     <td>testCase_buildApp_default</td>
 </tr>
@@ -362,7 +365,7 @@ textarea {
 
 <tr>
     <td>6</td>
-    <td>11 ms</td>
+    <td>10 ms</td>
     <td class="testPassed">passed</td>
     <td>testCase_buildReadme_default</td>
 </tr>
@@ -383,7 +386,7 @@ textarea {
 
 <tr>
     <td>9</td>
-    <td>16568 ms</td>
+    <td>16175 ms</td>
     <td class="testPassed">passed</td>
     <td>testCase_webpage_default</td>
 </tr>
@@ -396,14 +399,14 @@ textarea {
 
 <div class="platform">
 <h4>
-    3. npmTest - browser - / - Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Electron/1.7.14 Safari/537.36 - 2018-05-01T12:09:23.239Z<br>
+    3. npmTest - browser - / - Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Electron/1.7.14 Safari/537.36 - 2018-05-01T12:27:53.594Z<br>
     
     <a href="screenshot.npmTest.browser.%252F.png">
         <img alt="screenshot.npmTest.browser.%252F.png" src="screenshot.npmTest.browser.%252F.png">
     </a>
     <br>
     
-    <span>time-elapsed</span>- 19274 ms<br>
+    <span>time-elapsed</span>- 19035 ms<br>
     <span>tests failed</span>- 0<br>
     <span>tests passed</span>- 8<br>
     <span>tests pending</span>- 0<br>
@@ -440,7 +443,7 @@ textarea {
 
 <tr>
     <td>13</td>
-    <td>1 ms</td>
+    <td>0 ms</td>
     <td class="testPassed">passed</td>
     <td>testCase_buildLib_default</td>
 </tr>
@@ -461,14 +464,14 @@ textarea {
 
 <tr>
     <td>16</td>
-    <td>0 ms</td>
+    <td>1 ms</td>
     <td class="testPassed">passed</td>
     <td>testCase_nop_default</td>
 </tr>
 
 <tr>
     <td>17</td>
-    <td>43 ms</td>
+    <td>25 ms</td>
     <td class="testPassed">passed</td>
     <td>testCase_webpage_default</td>
 </tr>

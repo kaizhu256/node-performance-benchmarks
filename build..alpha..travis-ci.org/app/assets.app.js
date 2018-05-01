@@ -15772,52 +15772,6 @@ textarea {\n\
 .colorError {\n\
     color: #d00;\n\
 }\n\
-.testReportDiv img {\n\
-    border: 1px solid black;\n\
-    margin: 5px 0 5px 0;\n\
-    max-height: 256px;\n\
-    max-width: 512px;\n\
-}\n\
-.testReportDiv pre {\n\
-    background: #fdd;\n\
-    border-top: 1px solid black;\n\
-    margin-bottom: 0;\n\
-    padding: 10px;\n\
-}\n\
-.testReportDiv span {\n\
-    display: inline-block;\n\
-    width: 120px;\n\
-}\n\
-.testReportDiv table {\n\
-    border-top: 1px solid black;\n\
-    text-align: left;\n\
-    width: 100%;\n\
-}\n\
-.testReportDiv table > tbody > tr:nth-child(odd) {\n\
-    background: #bfb;\n\
-}\n\
-.testReportDiv .displayNone {\n\
-    display: none;\n\
-}\n\
-.testReportDiv .footer {\n\
-    text-align: center;\n\
-}\n\
-.testReportDiv .platform {\n\
-    background: #fff;\n\
-    border: 1px solid black;\n\
-    margin-bottom: 20px;\n\
-    padding: 0 10px 10px 10px;\n\
-    text-align: left;\n\
-}\n\
-.testReportDiv .summary {\n\
-    background: #bfb;\n\
-}\n\
-.testReportDiv .testFailed {\n\
-    background: #f99;\n\
-}\n\
-.testReportDiv .testPending {\n\
-    background: #99f;\n\
-}\n\
 .uiAnimateShake {\n\
     animation-duration: 500ms;\n\
     animation-name: uiAnimateShake;\n\
@@ -16870,6 +16824,59 @@ local.assetsDict['/assets.testReport.template.html'] =
     local.assetsDict['/assets.utility2.template.html']
     .replace('assets.utility2.template.html', '')
     .replace((/<title>.*?<\/title>/), '<title>test-report</title>')
+    .replace('</style>\n', '\
+<style>\n\
+/* jslint-utility2 */\n\
+/*csslint\n\
+*/\n\
+.testReportDiv img {\n\
+    border: 1px solid black;\n\
+    margin: 5px 0 5px 0;\n\
+    max-height: 256px;\n\
+    max-width: 512px;\n\
+}\n\
+.testReportDiv pre {\n\
+    background: #fdd;\n\
+    border-top: 1px solid black;\n\
+    margin-bottom: 0;\n\
+    padding: 10px;\n\
+}\n\
+.testReportDiv span {\n\
+    display: inline-block;\n\
+    width: 120px;\n\
+}\n\
+.testReportDiv table {\n\
+    border-top: 1px solid black;\n\
+    text-align: left;\n\
+    width: 100%;\n\
+}\n\
+.testReportDiv table > tbody > tr:nth-child(odd) {\n\
+    background: #bfb;\n\
+}\n\
+.testReportDiv .displayNone {\n\
+    display: none;\n\
+}\n\
+.testReportDiv .footer {\n\
+    text-align: center;\n\
+}\n\
+.testReportDiv .platform {\n\
+    background: #fff;\n\
+    border: 1px solid black;\n\
+    margin-bottom: 20px;\n\
+    padding: 0 10px 10px 10px;\n\
+    text-align: left;\n\
+}\n\
+.testReportDiv .summary {\n\
+    background: #bfb;\n\
+}\n\
+.testReportDiv .testFailed {\n\
+    background: #f99;\n\
+}\n\
+.testReportDiv .testPending {\n\
+    background: #99f;\n\
+}\n\
+</style>\n\
+'.replace('<style>\n', ''))
     .replace((/<\/script>[\S\s]*?<\/body>/), '\
 </script>\n\
 <div class="testReportDiv">\n\
@@ -29067,98 +29074,6 @@ textarea {\\n\
 \\\n\
 }\\n\
 \\\n\
-.testReportDiv img {\\n\
-\\\n\
-    border: 1px solid black;\\n\
-\\\n\
-    margin: 5px 0 5px 0;\\n\
-\\\n\
-    max-height: 256px;\\n\
-\\\n\
-    max-width: 512px;\\n\
-\\\n\
-}\\n\
-\\\n\
-.testReportDiv pre {\\n\
-\\\n\
-    background: #fdd;\\n\
-\\\n\
-    border-top: 1px solid black;\\n\
-\\\n\
-    margin-bottom: 0;\\n\
-\\\n\
-    padding: 10px;\\n\
-\\\n\
-}\\n\
-\\\n\
-.testReportDiv span {\\n\
-\\\n\
-    display: inline-block;\\n\
-\\\n\
-    width: 120px;\\n\
-\\\n\
-}\\n\
-\\\n\
-.testReportDiv table {\\n\
-\\\n\
-    border-top: 1px solid black;\\n\
-\\\n\
-    text-align: left;\\n\
-\\\n\
-    width: 100%;\\n\
-\\\n\
-}\\n\
-\\\n\
-.testReportDiv table > tbody > tr:nth-child(odd) {\\n\
-\\\n\
-    background: #bfb;\\n\
-\\\n\
-}\\n\
-\\\n\
-.testReportDiv .displayNone {\\n\
-\\\n\
-    display: none;\\n\
-\\\n\
-}\\n\
-\\\n\
-.testReportDiv .footer {\\n\
-\\\n\
-    text-align: center;\\n\
-\\\n\
-}\\n\
-\\\n\
-.testReportDiv .platform {\\n\
-\\\n\
-    background: #fff;\\n\
-\\\n\
-    border: 1px solid black;\\n\
-\\\n\
-    margin-bottom: 20px;\\n\
-\\\n\
-    padding: 0 10px 10px 10px;\\n\
-\\\n\
-    text-align: left;\\n\
-\\\n\
-}\\n\
-\\\n\
-.testReportDiv .summary {\\n\
-\\\n\
-    background: #bfb;\\n\
-\\\n\
-}\\n\
-\\\n\
-.testReportDiv .testFailed {\\n\
-\\\n\
-    background: #f99;\\n\
-\\\n\
-}\\n\
-\\\n\
-.testReportDiv .testPending {\\n\
-\\\n\
-    background: #99f;\\n\
-\\\n\
-}\\n\
-\\\n\
 .uiAnimateShake {\\n\
 \\\n\
     animation-duration: 500ms;\\n\
@@ -29756,52 +29671,6 @@ textarea {\n\
 }\n\
 .colorError {\n\
     color: #d00;\n\
-}\n\
-.testReportDiv img {\n\
-    border: 1px solid black;\n\
-    margin: 5px 0 5px 0;\n\
-    max-height: 256px;\n\
-    max-width: 512px;\n\
-}\n\
-.testReportDiv pre {\n\
-    background: #fdd;\n\
-    border-top: 1px solid black;\n\
-    margin-bottom: 0;\n\
-    padding: 10px;\n\
-}\n\
-.testReportDiv span {\n\
-    display: inline-block;\n\
-    width: 120px;\n\
-}\n\
-.testReportDiv table {\n\
-    border-top: 1px solid black;\n\
-    text-align: left;\n\
-    width: 100%;\n\
-}\n\
-.testReportDiv table > tbody > tr:nth-child(odd) {\n\
-    background: #bfb;\n\
-}\n\
-.testReportDiv .displayNone {\n\
-    display: none;\n\
-}\n\
-.testReportDiv .footer {\n\
-    text-align: center;\n\
-}\n\
-.testReportDiv .platform {\n\
-    background: #fff;\n\
-    border: 1px solid black;\n\
-    margin-bottom: 20px;\n\
-    padding: 0 10px 10px 10px;\n\
-    text-align: left;\n\
-}\n\
-.testReportDiv .summary {\n\
-    background: #bfb;\n\
-}\n\
-.testReportDiv .testFailed {\n\
-    background: #f99;\n\
-}\n\
-.testReportDiv .testPending {\n\
-    background: #99f;\n\
 }\n\
 .uiAnimateShake {\n\
     animation-duration: 500ms;\n\
@@ -32975,7 +32844,7 @@ local.stateInit({
     "utility2": {
         "assetsDict": {
             "/assets.index.css": "",
-            "/assets.index.template.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n<meta charset=\"UTF-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<!-- \"assets.utility2.template.html\" -->\n<title>{{env.npm_package_name}} ({{env.npm_package_version}})</title>\n<style>\n/* jslint-utility2 */\n/*csslint\n*/\n/* jslint-ignore-begin */\n*,\n*:after,\n*:before {\n    box-sizing: border-box;\n}\n/* jslint-ignore-end */\n@keyframes uiAnimateShake {\n    0%, 50% {\n        transform: translateX(10px);\n    }\n    25%, 75% {\n        transform: translateX(-10px);\n    }\n    100% {\n        transform: translateX(0);\n    }\n}\n@keyframes uiAnimateSpin {\n    0% {\n        transform: rotate(0deg);\n    }\n    100% {\n        transform: rotate(360deg);\n    }\n}\na {\n    overflow-wrap: break-word;\n}\nbody {\n    background: #eef;\n    font-family: Arial, Helvetica, sans-serif;\n    margin: 0 40px;\n}\nbody > div,\nbody > pre,\nbody > textarea,\nbody > .button {\n    margin-bottom: 20px;\n}\nbody > textarea {\n    height: 10rem;\n    width: 100%;\n}\nbody > textarea[readonly] {\n    background: #ddd;\n}\nbody > .button {\n    width: 20rem;\n}\ncode,\npre,\ntextarea {\n    font-family: Consolas, Menlo, monospace;\n    font-size: small;\n}\npre {\n    overflow-wrap: break-word;\n    white-space: pre-wrap;\n}\ntextarea {\n    overflow: auto;\n    white-space: pre;\n}\n.button {\n    background-color: #fff;\n    border: 1px solid;\n    border-bottom-color: rgb(186, 186, 186);\n    border-left-color: rgb(209, 209, 209);\n    border-radius: 4px;\n    border-right-color: rgb(209, 209, 209);\n    border-top-color: rgb(216, 216, 216);\n    color: #00d;\n    cursor: pointer;\n    display: inline-block;\n    font-family: Arial, Helvetica, sans-serif;\n    font-size: 12px;\n    font-style: normal;\n    font-weight: normal;\n    margin: 0;\n    padding: 2px 7px 3px 7px;\n    text-align: center;\n    text-decoration: underline;\n}\n.colorError {\n    color: #d00;\n}\n.testReportDiv img {\n    border: 1px solid black;\n    margin: 5px 0 5px 0;\n    max-height: 256px;\n    max-width: 512px;\n}\n.testReportDiv pre {\n    background: #fdd;\n    border-top: 1px solid black;\n    margin-bottom: 0;\n    padding: 10px;\n}\n.testReportDiv span {\n    display: inline-block;\n    width: 120px;\n}\n.testReportDiv table {\n    border-top: 1px solid black;\n    text-align: left;\n    width: 100%;\n}\n.testReportDiv table > tbody > tr:nth-child(odd) {\n    background: #bfb;\n}\n.testReportDiv .displayNone {\n    display: none;\n}\n.testReportDiv .footer {\n    text-align: center;\n}\n.testReportDiv .platform {\n    background: #fff;\n    border: 1px solid black;\n    margin-bottom: 20px;\n    padding: 0 10px 10px 10px;\n    text-align: left;\n}\n.testReportDiv .summary {\n    background: #bfb;\n}\n.testReportDiv .testFailed {\n    background: #f99;\n}\n.testReportDiv .testPending {\n    background: #99f;\n}\n.uiAnimateShake {\n    animation-duration: 500ms;\n    animation-name: uiAnimateShake;\n}\n.uiAnimateSlide {\n    overflow-y: hidden;\n    transition: max-height ease-in 250ms, min-height ease-in 250ms, padding-bottom ease-in 250ms, padding-top ease-in 250ms;\n}\n.utility2FooterDiv {\n    text-align: center;\n}\n.zeroPixel {\n    border: 0;\n    height: 0;\n    margin: 0;\n    padding: 0;\n    width: 0;\n}\n</style>\n</head>\n<body>\n<div id=\"ajaxProgressDiv1\" style=\"background: #d00; height: 2px; left: 0; margin: 0; padding: 0; position: fixed; top: 0; transition: background 500ms, width 1500ms; width: 0%; z-index: 1;\"></div>\n<div class=\"uiAnimateSpin\" style=\"animation: uiAnimateSpin 2s linear infinite; border: 5px solid #999; border-radius: 50%; border-top: 5px solid #7d7; display: none; height: 25px; vertical-align: middle; width: 25px;\"></div>\n<code style=\"display: none;\"></code><div class=\"button colorError uiAnimateShake uiAnimateSlide utility2FooterDiv zeroPixel\" style=\"display: none;\"></div><pre style=\"display: none;\"></pre><textarea readonly style=\"display: none;\"></textarea>\n<script>\n/* jslint-utility2 */\n/*jslint\n    bitwise: true,\n    browser: true,\n    maxerr: 4,\n    maxlen: 100,\n    node: true,\n    nomen: true,\n    regexp: true,\n    stupid: true\n*/\n(function () {\n    \"use strict\";\n    var ajaxProgressDiv1,\n        ajaxProgressState,\n        ajaxProgressUpdate;\n    if (window.timerIntervalAjaxProgressUpdate) {\n        return;\n    }\n    ajaxProgressDiv1 = document.querySelector(\"#ajaxProgressDiv1\");\n    setTimeout(function () {\n        ajaxProgressDiv1.style.width = \"25%\";\n    });\n    ajaxProgressState = 0;\n    ajaxProgressUpdate = (window.local &&\n        window.local.ajaxProgressUpdate) || function () {\n        ajaxProgressDiv1.style.width = \"100%\";\n        setTimeout(function () {\n            ajaxProgressDiv1.style.background = \"transparent\";\n            setTimeout(function () {\n                ajaxProgressDiv1.style.width = \"0%\";\n            }, 500);\n        }, 1500);\n    };\n    window.timerIntervalAjaxProgressUpdate = setInterval(function () {\n        ajaxProgressState += 1;\n        ajaxProgressDiv1.style.width = Math.max(\n            100 - 75 * Math.exp(-0.125 * ajaxProgressState),\n            Number(ajaxProgressDiv1.style.width.slice(0, -1)) || 0\n        ) + \"%\";\n    }, 1000);\n    window.addEventListener(\"load\", function () {\n        clearInterval(window.timerIntervalAjaxProgressUpdate);\n        ajaxProgressUpdate();\n    });\n    if (window.domOnEventSelectAllInsidePre) {\n        return;\n    }\n}());\n(function () {\n/*\n * this function will limit select-all from growing outside a <pre tabIndex=\"0\"> element\n * https://stackoverflow.com/questions/985272/selecting-text-in-an-element-akin-to-highlighting-with-your-mouse\n     */\n    \"use strict\";\n    window.domOnEventSelectAllInsidePre = function (event) {\n        var range, selection;\n        // select-all inside <pre> element\n        if (event &&\n                event.code === \"KeyA\" &&\n                (event.ctrlKey || event.metaKey) &&\n                event.target.closest(\"pre\")) {\n            range = document.createRange();\n            range.selectNodeContents(event.target.closest(\"pre\"));\n            selection = window.getSelection();\n            selection.removeAllRanges();\n            selection.addRange(range);\n            event.preventDefault();\n        }\n    };\n    document.addEventListener(\"keydown\", window.domOnEventSelectAllInsidePre);\n}());\n</script>\n<h1>\n<!-- utility2-comment\n    <a\n        {{#if env.npm_package_homepage}}\n        href=\"{{env.npm_package_homepage}}\"\n        {{/if env.npm_package_homepage}}\n        target=\"_blank\"\n    >\nutility2-comment -->\n        {{env.npm_package_name}} ({{env.npm_package_version}})\n<!-- utility2-comment\n    </a>\nutility2-comment -->\n</h1>\n<h3>{{env.npm_package_description}}</h3>\n<!-- utility2-comment\n<a class=\"button\" download href=\"assets.app.js\">download standalone app</a><br>\n<button class=\"button onclick onreset\" id=\"testRunButton1\">run internal test</button><br>\n<div class=\"uiAnimateSlide\" id=\"testReportDiv1\" style=\"border-bottom: 0; border-top: 0; margin-bottom: 0; margin-top: 0; max-height: 0; padding-bottom: 0; padding-top: 0;\"></div>\nutility2-comment -->\n\n\n\n<label>stderr and stdout</label>\n<textarea class=\"resettable\" id=\"outputTextareaStdout1\" readonly></textarea>\n<!-- utility2-comment\n{{#if isRollup}}\n<script src=\"assets.app.js\"></script>\n{{#unless isRollup}}\nutility2-comment -->\n<script src=\"assets.utility2.rollup.js\"></script>\n<script>window.utility2.onResetBefore.counter += 1;</script>\n<script src=\"jsonp.utility2.stateInit?callback=window.utility2.stateInit\"></script>\n<script src=\"assets.performance_benchmarks.js\"></script>\n<script src=\"assets.example.js\"></script>\n<script src=\"assets.test.js\"></script>\n<script>window.utility2.onResetBefore();</script>\n<!-- utility2-comment\n{{/if isRollup}}\nutility2-comment -->\n<div class=\"utility2FooterDiv\">\n    [ this app was created with\n    <a href=\"https://github.com/kaizhu256/node-utility2\" target=\"_blank\">utility2</a>\n    ]\n</div>\n</body>\n</html>\n",
+            "/assets.index.template.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n<meta charset=\"UTF-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<!-- \"assets.utility2.template.html\" -->\n<title>{{env.npm_package_name}} ({{env.npm_package_version}})</title>\n<style>\n/* jslint-utility2 */\n/*csslint\n*/\n/* jslint-ignore-begin */\n*,\n*:after,\n*:before {\n    box-sizing: border-box;\n}\n/* jslint-ignore-end */\n@keyframes uiAnimateShake {\n    0%, 50% {\n        transform: translateX(10px);\n    }\n    25%, 75% {\n        transform: translateX(-10px);\n    }\n    100% {\n        transform: translateX(0);\n    }\n}\n@keyframes uiAnimateSpin {\n    0% {\n        transform: rotate(0deg);\n    }\n    100% {\n        transform: rotate(360deg);\n    }\n}\na {\n    overflow-wrap: break-word;\n}\nbody {\n    background: #eef;\n    font-family: Arial, Helvetica, sans-serif;\n    margin: 0 40px;\n}\nbody > div,\nbody > pre,\nbody > textarea,\nbody > .button {\n    margin-bottom: 20px;\n}\nbody > textarea {\n    height: 10rem;\n    width: 100%;\n}\nbody > textarea[readonly] {\n    background: #ddd;\n}\nbody > .button {\n    width: 20rem;\n}\ncode,\npre,\ntextarea {\n    font-family: Consolas, Menlo, monospace;\n    font-size: small;\n}\npre {\n    overflow-wrap: break-word;\n    white-space: pre-wrap;\n}\ntextarea {\n    overflow: auto;\n    white-space: pre;\n}\n.button {\n    background-color: #fff;\n    border: 1px solid;\n    border-bottom-color: rgb(186, 186, 186);\n    border-left-color: rgb(209, 209, 209);\n    border-radius: 4px;\n    border-right-color: rgb(209, 209, 209);\n    border-top-color: rgb(216, 216, 216);\n    color: #00d;\n    cursor: pointer;\n    display: inline-block;\n    font-family: Arial, Helvetica, sans-serif;\n    font-size: 12px;\n    font-style: normal;\n    font-weight: normal;\n    margin: 0;\n    padding: 2px 7px 3px 7px;\n    text-align: center;\n    text-decoration: underline;\n}\n.colorError {\n    color: #d00;\n}\n.uiAnimateShake {\n    animation-duration: 500ms;\n    animation-name: uiAnimateShake;\n}\n.uiAnimateSlide {\n    overflow-y: hidden;\n    transition: max-height ease-in 250ms, min-height ease-in 250ms, padding-bottom ease-in 250ms, padding-top ease-in 250ms;\n}\n.utility2FooterDiv {\n    text-align: center;\n}\n.zeroPixel {\n    border: 0;\n    height: 0;\n    margin: 0;\n    padding: 0;\n    width: 0;\n}\n</style>\n</head>\n<body>\n<div id=\"ajaxProgressDiv1\" style=\"background: #d00; height: 2px; left: 0; margin: 0; padding: 0; position: fixed; top: 0; transition: background 500ms, width 1500ms; width: 0%; z-index: 1;\"></div>\n<div class=\"uiAnimateSpin\" style=\"animation: uiAnimateSpin 2s linear infinite; border: 5px solid #999; border-radius: 50%; border-top: 5px solid #7d7; display: none; height: 25px; vertical-align: middle; width: 25px;\"></div>\n<code style=\"display: none;\"></code><div class=\"button colorError uiAnimateShake uiAnimateSlide utility2FooterDiv zeroPixel\" style=\"display: none;\"></div><pre style=\"display: none;\"></pre><textarea readonly style=\"display: none;\"></textarea>\n<script>\n/* jslint-utility2 */\n/*jslint\n    bitwise: true,\n    browser: true,\n    maxerr: 4,\n    maxlen: 100,\n    node: true,\n    nomen: true,\n    regexp: true,\n    stupid: true\n*/\n(function () {\n    \"use strict\";\n    var ajaxProgressDiv1,\n        ajaxProgressState,\n        ajaxProgressUpdate;\n    if (window.timerIntervalAjaxProgressUpdate) {\n        return;\n    }\n    ajaxProgressDiv1 = document.querySelector(\"#ajaxProgressDiv1\");\n    setTimeout(function () {\n        ajaxProgressDiv1.style.width = \"25%\";\n    });\n    ajaxProgressState = 0;\n    ajaxProgressUpdate = (window.local &&\n        window.local.ajaxProgressUpdate) || function () {\n        ajaxProgressDiv1.style.width = \"100%\";\n        setTimeout(function () {\n            ajaxProgressDiv1.style.background = \"transparent\";\n            setTimeout(function () {\n                ajaxProgressDiv1.style.width = \"0%\";\n            }, 500);\n        }, 1500);\n    };\n    window.timerIntervalAjaxProgressUpdate = setInterval(function () {\n        ajaxProgressState += 1;\n        ajaxProgressDiv1.style.width = Math.max(\n            100 - 75 * Math.exp(-0.125 * ajaxProgressState),\n            Number(ajaxProgressDiv1.style.width.slice(0, -1)) || 0\n        ) + \"%\";\n    }, 1000);\n    window.addEventListener(\"load\", function () {\n        clearInterval(window.timerIntervalAjaxProgressUpdate);\n        ajaxProgressUpdate();\n    });\n    if (window.domOnEventSelectAllInsidePre) {\n        return;\n    }\n}());\n(function () {\n/*\n * this function will limit select-all from growing outside a <pre tabIndex=\"0\"> element\n * https://stackoverflow.com/questions/985272/selecting-text-in-an-element-akin-to-highlighting-with-your-mouse\n     */\n    \"use strict\";\n    window.domOnEventSelectAllInsidePre = function (event) {\n        var range, selection;\n        // select-all inside <pre> element\n        if (event &&\n                event.code === \"KeyA\" &&\n                (event.ctrlKey || event.metaKey) &&\n                event.target.closest(\"pre\")) {\n            range = document.createRange();\n            range.selectNodeContents(event.target.closest(\"pre\"));\n            selection = window.getSelection();\n            selection.removeAllRanges();\n            selection.addRange(range);\n            event.preventDefault();\n        }\n    };\n    document.addEventListener(\"keydown\", window.domOnEventSelectAllInsidePre);\n}());\n</script>\n<h1>\n<!-- utility2-comment\n    <a\n        {{#if env.npm_package_homepage}}\n        href=\"{{env.npm_package_homepage}}\"\n        {{/if env.npm_package_homepage}}\n        target=\"_blank\"\n    >\nutility2-comment -->\n        {{env.npm_package_name}} ({{env.npm_package_version}})\n<!-- utility2-comment\n    </a>\nutility2-comment -->\n</h1>\n<h3>{{env.npm_package_description}}</h3>\n<!-- utility2-comment\n<a class=\"button\" download href=\"assets.app.js\">download standalone app</a><br>\n<button class=\"button onclick onreset\" id=\"testRunButton1\">run internal test</button><br>\n<div class=\"uiAnimateSlide\" id=\"testReportDiv1\" style=\"border-bottom: 0; border-top: 0; margin-bottom: 0; margin-top: 0; max-height: 0; padding-bottom: 0; padding-top: 0;\"></div>\nutility2-comment -->\n\n\n\n<label>stderr and stdout</label>\n<textarea class=\"resettable\" id=\"outputTextareaStdout1\" readonly></textarea>\n<!-- utility2-comment\n{{#if isRollup}}\n<script src=\"assets.app.js\"></script>\n{{#unless isRollup}}\nutility2-comment -->\n<script src=\"assets.utility2.rollup.js\"></script>\n<script>window.utility2.onResetBefore.counter += 1;</script>\n<script src=\"jsonp.utility2.stateInit?callback=window.utility2.stateInit\"></script>\n<script src=\"assets.performance_benchmarks.js\"></script>\n<script src=\"assets.example.js\"></script>\n<script src=\"assets.test.js\"></script>\n<script>window.utility2.onResetBefore();</script>\n<!-- utility2-comment\n{{/if isRollup}}\nutility2-comment -->\n<div class=\"utility2FooterDiv\">\n    [ this app was created with\n    <a href=\"https://github.com/kaizhu256/node-utility2\" target=\"_blank\">utility2</a>\n    ]\n</div>\n</body>\n</html>\n",
             "/assets.swgg.swagger.json": ""
         },
         "env": {
@@ -33495,52 +33364,6 @@ textarea {\n\
 }\n\
 .colorError {\n\
     color: #d00;\n\
-}\n\
-.testReportDiv img {\n\
-    border: 1px solid black;\n\
-    margin: 5px 0 5px 0;\n\
-    max-height: 256px;\n\
-    max-width: 512px;\n\
-}\n\
-.testReportDiv pre {\n\
-    background: #fdd;\n\
-    border-top: 1px solid black;\n\
-    margin-bottom: 0;\n\
-    padding: 10px;\n\
-}\n\
-.testReportDiv span {\n\
-    display: inline-block;\n\
-    width: 120px;\n\
-}\n\
-.testReportDiv table {\n\
-    border-top: 1px solid black;\n\
-    text-align: left;\n\
-    width: 100%;\n\
-}\n\
-.testReportDiv table > tbody > tr:nth-child(odd) {\n\
-    background: #bfb;\n\
-}\n\
-.testReportDiv .displayNone {\n\
-    display: none;\n\
-}\n\
-.testReportDiv .footer {\n\
-    text-align: center;\n\
-}\n\
-.testReportDiv .platform {\n\
-    background: #fff;\n\
-    border: 1px solid black;\n\
-    margin-bottom: 20px;\n\
-    padding: 0 10px 10px 10px;\n\
-    text-align: left;\n\
-}\n\
-.testReportDiv .summary {\n\
-    background: #bfb;\n\
-}\n\
-.testReportDiv .testFailed {\n\
-    background: #f99;\n\
-}\n\
-.testReportDiv .testPending {\n\
-    background: #99f;\n\
 }\n\
 .uiAnimateShake {\n\
     animation-duration: 500ms;\n\
