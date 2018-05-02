@@ -1,1 +1,19 @@
-{     "devDependencies": {         "electron-lite": "kaizhu256/node-electron-lite#alpha",         "utility2": "kaizhu256/node-utility2#alpha"     },     "name":"performance-benchmarks",     "homepage": "https://github.com/kaizhu256/node-performance-benchmarks",     "repository": {         "type": "git",         "url": "https://github.com/kaizhu256/node-performance-benchmarks.git"     },     "scripts": {         "build-ci": "utility2 shReadmeTest build_ci.sh"     },     "version": "0.0.1" }
+{
+    "description": "the greatest app in the world!",
+    "devDependencies": {
+        "electron-lite": "kaizhu256/node-electron-lite#alpha",
+        "utility2": "kaizhu256/node-utility2#alpha"
+    },
+    "homepage": "https://github.com/kaizhu256/node-performance-benchmarks",
+    "main": "lib.performance_benchmarks.js",
+    "name": "performance-benchmarks",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/kaizhu256/node-performance-benchmarks.git"
+    },
+    "scripts": {
+        "build-ci": "utility2 shReadmeTest build_ci.sh",
+        "test": "(set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)"
+    },
+    "version": "2018.5.2"
+}
