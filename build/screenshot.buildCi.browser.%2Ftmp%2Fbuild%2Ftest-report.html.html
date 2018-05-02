@@ -179,7 +179,11 @@ textarea {
     regexp: true,
     stupid: true
 */
+// init timerIntervalAjaxProgressUpdate
 (function () {
+/*
+ * this function will increment the ajax-progress-bar until the webpage has loaded
+ */
     "use strict";
     var ajaxProgressDiv1,
         ajaxProgressState,
@@ -213,19 +217,19 @@ textarea {
         clearInterval(window.timerIntervalAjaxProgressUpdate);
         ajaxProgressUpdate();
     });
+}());
+// init domOnEventSelectAllInsidePre
+(function () {
+/*
+ * this function will limit select-all inside <pre tabIndex="0"> elements
+ * https://stackoverflow.com/questions/985272/selecting-text-in-an-element-akin-to-highlighting-with-your-mouse
+ */
+    "use strict";
     if (window.domOnEventSelectAllInsidePre) {
         return;
     }
-}());
-(function () {
-/*
- * this function will limit select-all from growing outside a <pre tabIndex="0"> element
- * https://stackoverflow.com/questions/985272/selecting-text-in-an-element-akin-to-highlighting-with-your-mouse
-     */
-    "use strict";
     window.domOnEventSelectAllInsidePre = function (event) {
         var range, selection;
-        // select-all inside <pre> element
         if (event &&
                 event.code === "KeyA" &&
                 (event.ctrlKey || event.metaKey) &&
@@ -244,15 +248,15 @@ textarea {
 <div class="testReportDiv">
 <h1>test-report for
     <a href="https://github.com/kaizhu256/node-performance-benchmarks">
-        performance-benchmarks (2018.5.1)
+        performance-benchmarks (2018.5.2)
     </a>
 </h1>
 <div class="platform summary">
 <h2>summary</h2>
 <h4>
     <span>version</span>-
-        2018.5.1<br>
-    <span>test date</span>- 2018-05-01T15:23:31.504Z<br>
+        2018.5.2<br>
+    <span>test date</span>- 2018-05-02T13:19:12.830Z<br>
     <span>commit info</span>-
         
         0fb45ddd747e6ef2bed34a784293b417ee26d83e - [build app]<br>
@@ -268,9 +272,9 @@ textarea {
     </tr>
 </thead>
 <tbody><tr>
-    <td>413223 ms</td>
+    <td>82521 ms</td>
     <td class="testPassed">0</td>
-    <td>33</td>
+    <td>17</td>
     <td>0</td>
 </tr></tbody>
 </table>
@@ -278,14 +282,14 @@ textarea {
 
 <div class="platform">
 <h4>
-    1. buildApidoc - node - linux v10.0.0 - 2018-05-01T15:18:00.783Z<br>
+    1. buildApidoc - node - linux v10.0.0 - 2018-05-02T13:19:12.826Z<br>
     
     <a href="screenshot.buildApidoc.svg">
         <img alt="screenshot.buildApidoc.svg" src="screenshot.buildApidoc.svg">
     </a>
     <br>
     
-    <span>time-elapsed</span>- 332011 ms<br>
+    <span>time-elapsed</span>- 1315 ms<br>
     <span>tests failed</span>- 0<br>
     <span>tests passed</span>- 1<br>
     <span>tests pending</span>- 0<br>
@@ -301,7 +305,7 @@ textarea {
 
 <tr>
     <td>1</td>
-    <td>107 ms</td>
+    <td>111 ms</td>
     <td class="testPassed">passed</td>
     <td>testCase_buildApidoc_default</td>
 </tr>
@@ -314,14 +318,14 @@ textarea {
 
 <div class="platform">
 <h4>
-    2. buildApp - node - linux v10.0.0 - 2018-05-01T15:16:39.599Z<br>
+    2. buildApp - node - linux v10.0.0 - 2018-05-02T13:17:51.619Z<br>
     
     <a href="screenshot.buildApp.svg">
         <img alt="screenshot.buildApp.svg" src="screenshot.buildApp.svg">
     </a>
     <br>
     
-    <span>time-elapsed</span>- 413223 ms<br>
+    <span>time-elapsed</span>- 82521 ms<br>
     <span>tests failed</span>- 0<br>
     <span>tests passed</span>- 8<br>
     <span>tests pending</span>- 0<br>
@@ -337,42 +341,42 @@ textarea {
 
 <tr>
     <td>2</td>
-    <td>118 ms</td>
+    <td>110 ms</td>
     <td class="testPassed">passed</td>
     <td>testCase_buildApidoc_default</td>
 </tr>
 
 <tr>
     <td>3</td>
-    <td>5554 ms</td>
+    <td>5510 ms</td>
     <td class="testPassed">passed</td>
     <td>testCase_buildApp_default</td>
 </tr>
 
 <tr>
     <td>4</td>
-    <td>1 ms</td>
+    <td>0 ms</td>
     <td class="testPassed">passed</td>
     <td>testCase_buildCustomOrg_default</td>
 </tr>
 
 <tr>
     <td>5</td>
-    <td>1 ms</td>
+    <td>0 ms</td>
     <td class="testPassed">passed</td>
     <td>testCase_buildLib_default</td>
 </tr>
 
 <tr>
     <td>6</td>
-    <td>12 ms</td>
+    <td>10 ms</td>
     <td class="testPassed">passed</td>
     <td>testCase_buildReadme_default</td>
 </tr>
 
 <tr>
     <td>7</td>
-    <td>1 ms</td>
+    <td>0 ms</td>
     <td class="testPassed">passed</td>
     <td>testCase_buildTest_default</td>
 </tr>
@@ -386,7 +390,7 @@ textarea {
 
 <tr>
     <td>9</td>
-    <td>16136 ms</td>
+    <td>16022 ms</td>
     <td class="testPassed">passed</td>
     <td>testCase_webpage_default</td>
 </tr>
@@ -399,14 +403,14 @@ textarea {
 
 <div class="platform">
 <h4>
-    3. deployGithubTest - browser - /node-performance-benchmarks/build..alpha..travis-ci.org/app/ - Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Electron/1.7.14 Safari/537.36 - 2018-05-01T15:19:59.506Z<br>
+    3. npmTest - browser - / - Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Electron/1.7.14 Safari/537.36 - 2018-05-02T13:18:55.416Z<br>
     
-    <a href="screenshot.deployGithubTest.browser.%252Fnode-performance-benchmarks%252Fbuild%252Fapp.png">
-        <img alt="screenshot.deployGithubTest.browser.%252Fnode-performance-benchmarks%252Fbuild%252Fapp.png" src="screenshot.deployGithubTest.browser.%252Fnode-performance-benchmarks%252Fbuild%252Fapp.png">
+    <a href="screenshot.npmTest.browser.%252F.png">
+        <img alt="screenshot.npmTest.browser.%252F.png" src="screenshot.npmTest.browser.%252F.png">
     </a>
     <br>
     
-    <span>time-elapsed</span>- 213389 ms<br>
+    <span>time-elapsed</span>- 18787 ms<br>
     <span>tests failed</span>- 0<br>
     <span>tests passed</span>- 8<br>
     <span>tests pending</span>- 0<br>
@@ -471,177 +475,7 @@ textarea {
 
 <tr>
     <td>17</td>
-    <td>8 ms</td>
-    <td class="testPassed">passed</td>
-    <td>testCase_webpage_default</td>
-</tr>
-
-</tbody>
-</table>
-<pre class="displayNone" tabindex="0">
-</pre>
-</div>
-
-<div class="platform">
-<h4>
-    4. npmTest - browser - / - Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Electron/1.7.14 Safari/537.36 - 2018-05-01T15:17:43.147Z<br>
-    
-    <a href="screenshot.npmTest.browser.%252F.png">
-        <img alt="screenshot.npmTest.browser.%252F.png" src="screenshot.npmTest.browser.%252F.png">
-    </a>
-    <br>
-    
-    <span>time-elapsed</span>- 349753 ms<br>
-    <span>tests failed</span>- 0<br>
-    <span>tests passed</span>- 8<br>
-    <span>tests pending</span>- 0<br>
-</h4>
-<table>
-<thead><tr>
-    <th>#</th>
-    <th>time-elapsed</th>
-    <th>status</th>
-    <th>test-case</th>
-</tr></thead>
-<tbody>
-
-<tr>
-    <td>18</td>
-    <td>0 ms</td>
-    <td class="testPassed">passed</td>
-    <td>testCase_buildApidoc_default</td>
-</tr>
-
-<tr>
-    <td>19</td>
-    <td>0 ms</td>
-    <td class="testPassed">passed</td>
-    <td>testCase_buildApp_default</td>
-</tr>
-
-<tr>
-    <td>20</td>
-    <td>0 ms</td>
-    <td class="testPassed">passed</td>
-    <td>testCase_buildCustomOrg_default</td>
-</tr>
-
-<tr>
-    <td>21</td>
-    <td>0 ms</td>
-    <td class="testPassed">passed</td>
-    <td>testCase_buildLib_default</td>
-</tr>
-
-<tr>
-    <td>22</td>
-    <td>0 ms</td>
-    <td class="testPassed">passed</td>
-    <td>testCase_buildReadme_default</td>
-</tr>
-
-<tr>
-    <td>23</td>
-    <td>1 ms</td>
-    <td class="testPassed">passed</td>
-    <td>testCase_buildTest_default</td>
-</tr>
-
-<tr>
-    <td>24</td>
-    <td>0 ms</td>
-    <td class="testPassed">passed</td>
-    <td>testCase_nop_default</td>
-</tr>
-
-<tr>
-    <td>25</td>
-    <td>22 ms</td>
-    <td class="testPassed">passed</td>
-    <td>testCase_webpage_default</td>
-</tr>
-
-</tbody>
-</table>
-<pre class="displayNone" tabindex="0">
-</pre>
-</div>
-
-<div class="platform">
-<h4>
-    5. npmTest - browser - / - Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Electron/1.7.14 Safari/537.36 - 2018-05-01T15:23:13.835Z<br>
-    
-    <a href="screenshot.npmTest.browser.%252F.png">
-        <img alt="screenshot.npmTest.browser.%252F.png" src="screenshot.npmTest.browser.%252F.png">
-    </a>
-    <br>
-    
-    <span>time-elapsed</span>- 19062 ms<br>
-    <span>tests failed</span>- 0<br>
-    <span>tests passed</span>- 8<br>
-    <span>tests pending</span>- 0<br>
-</h4>
-<table>
-<thead><tr>
-    <th>#</th>
-    <th>time-elapsed</th>
-    <th>status</th>
-    <th>test-case</th>
-</tr></thead>
-<tbody>
-
-<tr>
-    <td>26</td>
-    <td>0 ms</td>
-    <td class="testPassed">passed</td>
-    <td>testCase_buildApidoc_default</td>
-</tr>
-
-<tr>
-    <td>27</td>
-    <td>0 ms</td>
-    <td class="testPassed">passed</td>
-    <td>testCase_buildApp_default</td>
-</tr>
-
-<tr>
-    <td>28</td>
-    <td>0 ms</td>
-    <td class="testPassed">passed</td>
-    <td>testCase_buildCustomOrg_default</td>
-</tr>
-
-<tr>
-    <td>29</td>
-    <td>0 ms</td>
-    <td class="testPassed">passed</td>
-    <td>testCase_buildLib_default</td>
-</tr>
-
-<tr>
-    <td>30</td>
-    <td>0 ms</td>
-    <td class="testPassed">passed</td>
-    <td>testCase_buildReadme_default</td>
-</tr>
-
-<tr>
-    <td>31</td>
-    <td>0 ms</td>
-    <td class="testPassed">passed</td>
-    <td>testCase_buildTest_default</td>
-</tr>
-
-<tr>
-    <td>32</td>
-    <td>0 ms</td>
-    <td class="testPassed">passed</td>
-    <td>testCase_nop_default</td>
-</tr>
-
-<tr>
-    <td>33</td>
-    <td>14 ms</td>
+    <td>12 ms</td>
     <td class="testPassed">passed</td>
     <td>testCase_webpage_default</td>
 </tr>

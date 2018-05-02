@@ -244,18 +244,18 @@ instruction
             };
             local.cliDict['--eval'] = local.cliDict['--eval'] || local.cliDict._eval;
             local.cliDict['-e'] = local.cliDict['-e'] || local.cliDict._eval;
-            local.cliDict._help = local.cliDict._help || function () {
+            local.cliDict._help = local.cliDict._help || function (options) {
             /*
              *
              * # print help
              */
-                var commandList, packageJson, text, textDict;
+                var commandList, file, packageJson, text, textDict;
                 commandList = [{
-                    arg: '<arg1> <arg2> ...',
+                    arg: '<arg2> ...',
                     description: 'usage:',
-                    command: ['<command>'],
-                    file: __filename.replace((/.*\//), '')
+                    command: ['<arg1>']
                 }];
+                file = __filename.replace((/.*\//), '');
                 packageJson = require('./package.json');
                 textDict = {};
                 Object.keys(local.cliDict).sort().forEach(function (key, ii) {
@@ -264,7 +264,7 @@ instruction
                     }
                     text = String(local.cliDict[key]);
                     if (key === '_default') {
-                        key = '<no-command>';
+                        key = '<>';
                     }
                     ii = textDict[text] = textDict[text] || (ii + 1);
                     if (commandList[ii]) {
@@ -278,22 +278,27 @@ instruction
                         commandList[ii] = {
                             arg: commandList[ii][1].trim(),
                             command: [key],
-                            description: commandList[ii][2].trim(),
-                            file: commandList[0].file
+                            description: commandList[ii][2].trim()
                         };
                     }
                 });
-                console.log(packageJson.name + ' (' + packageJson.version + ')\n\n' + commandList
+                (options && options.modeError
+                    ? console.error
+                    : console.log)((options && options.modeError
+                    ? '\u001b[31merror: missing <arg1>\u001b[39m\n\n'
+                    : '') + packageJson.name + ' (' + packageJson.version + ')\n\n' + commandList
                     .filter(function (element) {
                         return element;
                     }).map(function (element) {
                         return (element.description + '\n' +
-                            element.file + '    ' +
-                            element.command.sort().join('|') + '    ' +
-                            element.arg).trim();
+                            file + '  ' +
+                            element.command.sort().join('|') + '  ' +
+                            element.arg.replace((/ +/g), '  '))
+                                .replace((/<>\||\|<>|<> {2}/), '')
+                                .trim();
                     })
-                    .join('\n\n') + '\n\nexample:\n' + local.path.basename(__filename) +
-                    '    --eval    \'console.log("hello world")\'');
+                    .join('\n\n') + '\n\nexample:\n' + file +
+                    '  --eval  \'console.log("hello world")\'');
             };
             local.cliDict['--help'] = local.cliDict['--help'] || local.cliDict._help;
             local.cliDict['-h'] = local.cliDict['-h'] || local.cliDict._help;
@@ -323,6 +328,12 @@ instruction
             local.cliDict['-v'] = local.cliDict['-v'] || local.cliDict._version;
             // run fnc()
             fnc = fnc || function () {
+                // default to --help command if no arguments are given
+                if (process.argv.length <= 2 && !local.cliDict._default.modeNoCommand) {
+                    local.cliDict._help({ modeError: true });
+                    process.exit(1);
+                    return;
+                }
                 if (local.cliDict[process.argv[2]]) {
                     local.cliDict[process.argv[2]]();
                     return;
@@ -1349,18 +1360,18 @@ vendor\\)s\\{0,1\\}\\(\\b\\|_\\)\
             };
             local.cliDict['--eval'] = local.cliDict['--eval'] || local.cliDict._eval;
             local.cliDict['-e'] = local.cliDict['-e'] || local.cliDict._eval;
-            local.cliDict._help = local.cliDict._help || function () {
+            local.cliDict._help = local.cliDict._help || function (options) {
             /*
              *
              * # print help
              */
-                var commandList, packageJson, text, textDict;
+                var commandList, file, packageJson, text, textDict;
                 commandList = [{
-                    arg: '<arg1> <arg2> ...',
+                    arg: '<arg2> ...',
                     description: 'usage:',
-                    command: ['<command>'],
-                    file: __filename.replace((/.*\//), '')
+                    command: ['<arg1>']
                 }];
+                file = __filename.replace((/.*\//), '');
                 packageJson = require('./package.json');
                 textDict = {};
                 Object.keys(local.cliDict).sort().forEach(function (key, ii) {
@@ -1369,7 +1380,7 @@ vendor\\)s\\{0,1\\}\\(\\b\\|_\\)\
                     }
                     text = String(local.cliDict[key]);
                     if (key === '_default') {
-                        key = '<no-command>';
+                        key = '<>';
                     }
                     ii = textDict[text] = textDict[text] || (ii + 1);
                     if (commandList[ii]) {
@@ -1383,22 +1394,27 @@ vendor\\)s\\{0,1\\}\\(\\b\\|_\\)\
                         commandList[ii] = {
                             arg: commandList[ii][1].trim(),
                             command: [key],
-                            description: commandList[ii][2].trim(),
-                            file: commandList[0].file
+                            description: commandList[ii][2].trim()
                         };
                     }
                 });
-                console.log(packageJson.name + ' (' + packageJson.version + ')\n\n' + commandList
+                (options && options.modeError
+                    ? console.error
+                    : console.log)((options && options.modeError
+                    ? '\u001b[31merror: missing <arg1>\u001b[39m\n\n'
+                    : '') + packageJson.name + ' (' + packageJson.version + ')\n\n' + commandList
                     .filter(function (element) {
                         return element;
                     }).map(function (element) {
                         return (element.description + '\n' +
-                            element.file + '    ' +
-                            element.command.sort().join('|') + '    ' +
-                            element.arg).trim();
+                            file + '  ' +
+                            element.command.sort().join('|') + '  ' +
+                            element.arg.replace((/ +/g), '  '))
+                                .replace((/<>\||\|<>|<> {2}/), '')
+                                .trim();
                     })
-                    .join('\n\n') + '\n\nexample:\n' + local.path.basename(__filename) +
-                    '    --eval    \'console.log("hello world")\'');
+                    .join('\n\n') + '\n\nexample:\n' + file +
+                    '  --eval  \'console.log("hello world")\'');
             };
             local.cliDict['--help'] = local.cliDict['--help'] || local.cliDict._help;
             local.cliDict['-h'] = local.cliDict['-h'] || local.cliDict._help;
@@ -1428,6 +1444,12 @@ vendor\\)s\\{0,1\\}\\(\\b\\|_\\)\
             local.cliDict['-v'] = local.cliDict['-v'] || local.cliDict._version;
             // run fnc()
             fnc = fnc || function () {
+                // default to --help command if no arguments are given
+                if (process.argv.length <= 2 && !local.cliDict._default.modeNoCommand) {
+                    local.cliDict._help({ modeError: true });
+                    process.exit(1);
+                    return;
+                }
                 if (local.cliDict[process.argv[2]]) {
                     local.cliDict[process.argv[2]]();
                     return;
@@ -3669,18 +3691,18 @@ vendor\\)s\\{0,1\\}\\(\\b\\|_\\)\
             };
             local.cliDict['--eval'] = local.cliDict['--eval'] || local.cliDict._eval;
             local.cliDict['-e'] = local.cliDict['-e'] || local.cliDict._eval;
-            local.cliDict._help = local.cliDict._help || function () {
+            local.cliDict._help = local.cliDict._help || function (options) {
             /*
              *
              * # print help
              */
-                var commandList, packageJson, text, textDict;
+                var commandList, file, packageJson, text, textDict;
                 commandList = [{
-                    arg: '<arg1> <arg2> ...',
+                    arg: '<arg2> ...',
                     description: 'usage:',
-                    command: ['<command>'],
-                    file: __filename.replace((/.*\//), '')
+                    command: ['<arg1>']
                 }];
+                file = __filename.replace((/.*\//), '');
                 packageJson = require('./package.json');
                 textDict = {};
                 Object.keys(local.cliDict).sort().forEach(function (key, ii) {
@@ -3689,7 +3711,7 @@ vendor\\)s\\{0,1\\}\\(\\b\\|_\\)\
                     }
                     text = String(local.cliDict[key]);
                     if (key === '_default') {
-                        key = '<no-command>';
+                        key = '<>';
                     }
                     ii = textDict[text] = textDict[text] || (ii + 1);
                     if (commandList[ii]) {
@@ -3703,22 +3725,27 @@ vendor\\)s\\{0,1\\}\\(\\b\\|_\\)\
                         commandList[ii] = {
                             arg: commandList[ii][1].trim(),
                             command: [key],
-                            description: commandList[ii][2].trim(),
-                            file: commandList[0].file
+                            description: commandList[ii][2].trim()
                         };
                     }
                 });
-                console.log(packageJson.name + ' (' + packageJson.version + ')\n\n' + commandList
+                (options && options.modeError
+                    ? console.error
+                    : console.log)((options && options.modeError
+                    ? '\u001b[31merror: missing <arg1>\u001b[39m\n\n'
+                    : '') + packageJson.name + ' (' + packageJson.version + ')\n\n' + commandList
                     .filter(function (element) {
                         return element;
                     }).map(function (element) {
                         return (element.description + '\n' +
-                            element.file + '    ' +
-                            element.command.sort().join('|') + '    ' +
-                            element.arg).trim();
+                            file + '  ' +
+                            element.command.sort().join('|') + '  ' +
+                            element.arg.replace((/ +/g), '  '))
+                                .replace((/<>\||\|<>|<> {2}/), '')
+                                .trim();
                     })
-                    .join('\n\n') + '\n\nexample:\n' + local.path.basename(__filename) +
-                    '    --eval    \'console.log("hello world")\'');
+                    .join('\n\n') + '\n\nexample:\n' + file +
+                    '  --eval  \'console.log("hello world")\'');
             };
             local.cliDict['--help'] = local.cliDict['--help'] || local.cliDict._help;
             local.cliDict['-h'] = local.cliDict['-h'] || local.cliDict._help;
@@ -3748,6 +3775,12 @@ vendor\\)s\\{0,1\\}\\(\\b\\|_\\)\
             local.cliDict['-v'] = local.cliDict['-v'] || local.cliDict._version;
             // run fnc()
             fnc = fnc || function () {
+                // default to --help command if no arguments are given
+                if (process.argv.length <= 2 && !local.cliDict._default.modeNoCommand) {
+                    local.cliDict._help({ modeError: true });
+                    process.exit(1);
+                    return;
+                }
                 if (local.cliDict[process.argv[2]]) {
                     local.cliDict[process.argv[2]]();
                     return;
@@ -3925,6 +3958,7 @@ vendor\\)s\\{0,1\\}\\(\\b\\|_\\)\
         local.githubContentAjax = function (options, onError) {
         /*
          * this function will make a low-level content-request to github
+         * https://developer.github.com/v3/repos/contents/
          */
             // init options
             options = {
@@ -4010,7 +4044,7 @@ vendor\\)s\\{0,1\\}\\(\\b\\|_\\)\
 
         local.githubContentDelete = function (options, onError) {
         /*
-         * this function will delete the github file
+         * this function will delete the github-file
          * https://developer.github.com/v3/repos/contents/#delete-a-file
          */
             options = {
@@ -4060,7 +4094,7 @@ vendor\\)s\\{0,1\\}\\(\\b\\|_\\)\
 
         local.githubContentGet = function (options, onError) {
         /*
-         * this function will get the github file
+         * this function will get the github-file
          * https://developer.github.com/v3/repos/contents/#get-contents
          */
             options = { httpRequest: options.httpRequest, url: options.url };
@@ -4085,7 +4119,8 @@ vendor\\)s\\{0,1\\}\\(\\b\\|_\\)\
 
         local.githubContentPut = function (options, onError) {
         /*
-         * this function will put options.content into the github file
+         * this function will put options.content to github-file
+         * https://developer.github.com/v3/repos/contents/#create-a-file
          * https://developer.github.com/v3/repos/contents/#update-a-file
          */
             options = {
@@ -4125,7 +4160,7 @@ vendor\\)s\\{0,1\\}\\(\\b\\|_\\)\
 
         local.githubContentPutFile = function (options, onError) {
         /*
-         * this function will put options.file into the github file
+         * this function will put options.file to github-file
          * https://developer.github.com/v3/repos/contents/#update-a-file
          */
             options = {
@@ -4239,8 +4274,8 @@ vendor\\)s\\{0,1\\}\\(\\b\\|_\\)\
         local.cliDict = {};
         local.cliDict.delete = function () {
         /*
-         * <fileRemote> <commitMessage>
-         * # delete <fileRemote> from github
+         * <fileRemote|dirRemote> <commitMessage>
+         * # delete <fileRemote|dirRemote> from github
          */
             local.githubContentDelete({
                 message: process.argv[4],
@@ -4443,18 +4478,18 @@ vendor\\)s\\{0,1\\}\\(\\b\\|_\\)\
             };
             local.cliDict['--eval'] = local.cliDict['--eval'] || local.cliDict._eval;
             local.cliDict['-e'] = local.cliDict['-e'] || local.cliDict._eval;
-            local.cliDict._help = local.cliDict._help || function () {
+            local.cliDict._help = local.cliDict._help || function (options) {
             /*
              *
              * # print help
              */
-                var commandList, packageJson, text, textDict;
+                var commandList, file, packageJson, text, textDict;
                 commandList = [{
-                    arg: '<arg1> <arg2> ...',
+                    arg: '<arg2> ...',
                     description: 'usage:',
-                    command: ['<command>'],
-                    file: __filename.replace((/.*\//), '')
+                    command: ['<arg1>']
                 }];
+                file = __filename.replace((/.*\//), '');
                 packageJson = require('./package.json');
                 textDict = {};
                 Object.keys(local.cliDict).sort().forEach(function (key, ii) {
@@ -4463,7 +4498,7 @@ vendor\\)s\\{0,1\\}\\(\\b\\|_\\)\
                     }
                     text = String(local.cliDict[key]);
                     if (key === '_default') {
-                        key = '<no-command>';
+                        key = '<>';
                     }
                     ii = textDict[text] = textDict[text] || (ii + 1);
                     if (commandList[ii]) {
@@ -4477,22 +4512,27 @@ vendor\\)s\\{0,1\\}\\(\\b\\|_\\)\
                         commandList[ii] = {
                             arg: commandList[ii][1].trim(),
                             command: [key],
-                            description: commandList[ii][2].trim(),
-                            file: commandList[0].file
+                            description: commandList[ii][2].trim()
                         };
                     }
                 });
-                console.log(packageJson.name + ' (' + packageJson.version + ')\n\n' + commandList
+                (options && options.modeError
+                    ? console.error
+                    : console.log)((options && options.modeError
+                    ? '\u001b[31merror: missing <arg1>\u001b[39m\n\n'
+                    : '') + packageJson.name + ' (' + packageJson.version + ')\n\n' + commandList
                     .filter(function (element) {
                         return element;
                     }).map(function (element) {
                         return (element.description + '\n' +
-                            element.file + '    ' +
-                            element.command.sort().join('|') + '    ' +
-                            element.arg).trim();
+                            file + '  ' +
+                            element.command.sort().join('|') + '  ' +
+                            element.arg.replace((/ +/g), '  '))
+                                .replace((/<>\||\|<>|<> {2}/), '')
+                                .trim();
                     })
-                    .join('\n\n') + '\n\nexample:\n' + local.path.basename(__filename) +
-                    '    --eval    \'console.log("hello world")\'');
+                    .join('\n\n') + '\n\nexample:\n' + file +
+                    '  --eval  \'console.log("hello world")\'');
             };
             local.cliDict['--help'] = local.cliDict['--help'] || local.cliDict._help;
             local.cliDict['-h'] = local.cliDict['-h'] || local.cliDict._help;
@@ -4522,6 +4562,12 @@ vendor\\)s\\{0,1\\}\\(\\b\\|_\\)\
             local.cliDict['-v'] = local.cliDict['-v'] || local.cliDict._version;
             // run fnc()
             fnc = fnc || function () {
+                // default to --help command if no arguments are given
+                if (process.argv.length <= 2 && !local.cliDict._default.modeNoCommand) {
+                    local.cliDict._help({ modeError: true });
+                    process.exit(1);
+                    return;
+                }
                 if (local.cliDict[process.argv[2]]) {
                     local.cliDict[process.argv[2]]();
                     return;
@@ -6742,6 +6788,34 @@ local['head.txt'] = '\
 </style>\n\
 </head>\n\
 <body class="x-istanbul">\n\
+<script>\n\
+// init domOnEventSelectAllInsidePre\n\
+(function () {\n\
+/*\n\
+ * this function will limit select-all inside <pre tabIndex="0"> elements\n\
+ * https://stackoverflow.com/questions/985272/selecting-text-in-an-element-akin-to-highlighting-with-your-mouse\n\
+ */\n\
+    "use strict";\n\
+    if (window.domOnEventSelectAllInsidePre) {\n\
+        return;\n\
+    }\n\
+    window.domOnEventSelectAllInsidePre = function (event) {\n\
+        var range, selection;\n\
+        if (event &&\n\
+                event.code === "KeyA" &&\n\
+                (event.ctrlKey || event.metaKey) &&\n\
+                event.target.closest("pre")) {\n\
+            range = document.createRange();\n\
+            range.selectNodeContents(event.target.closest("pre"));\n\
+            selection = window.getSelection();\n\
+            selection.removeAllRanges();\n\
+            selection.addRange(range);\n\
+            event.preventDefault();\n\
+        }\n\
+    };\n\
+    document.addEventListener("keydown", window.domOnEventSelectAllInsidePre);\n\
+}());\n\
+</script>\n\
 <div class="header {{reportClass}}">\n\
     <h1 style="font-weight: bold;">\n\
         <a href="{{env.npm_package_homepage}}">{{env.npm_package_name}} ({{env.npm_package_version}})</a>\n\
@@ -6897,7 +6971,7 @@ require("handlebars"),defaults=require("./common/defaults"),path=require("path")
 templateFor("foot"),pathTemplate=handlebars.compile('<div class="path">{{{html}}}</div>'
 ),detailTemplate=handlebars.compile(["<tr>",'<td class="line-count">{{#show_lines}}{{maxLines}}{{/show_lines}}</td>'
 ,'<td class="line-coverage">{{#show_line_execution_counts fileCoverage}}{{maxLines}}{{/show_line_execution_counts}}</td>'
-,'<td class="text"><pre class="prettyprint lang-js">{{#show_code structured}}{{/show_code}}</pre></td>'
+,'<td class="text"><pre class="prettyprint lang-js" tabIndex="0">{{#show_code structured}}{{/show_code}}</pre></td>'
 ,"</tr>\n"].join("")),summaryTableHeader=['<div class="coverage-summary">',"<table>"
 ,"<thead>","<tr>",'   <th data-col="file" data-fmt="html" data-html="true" class="file">File</th>'
 ,'   <th data-col="statements" data-type="number" data-fmt="pct" class="pct">Statements</th>'
@@ -7037,8 +7111,8 @@ local.templateCoverageBadgeSvg =
         local.cliDict = {};
         local.cliDict.cover = function () {
         /*
-         * script
-         * run and cover the script
+         * <script>
+         * # run and cover the <script>
          */
             var tmp;
             try {
@@ -7080,8 +7154,8 @@ local.templateCoverageBadgeSvg =
         };
         local.cliDict.instrument = function () {
         /*
-         * script
-         * instrument the script and print result to stdout
+         * <script>
+         * # instrument the <script> and print result to stdout
          */
             process.argv[3] = local.path.resolve(process.cwd(), process.argv[3]);
             process.stdout.write(local.instrumentSync(
@@ -7092,8 +7166,8 @@ local.templateCoverageBadgeSvg =
         //
         local.cliDict.test = function () {
         /*
-         * script
-         * run and cover the script if env var $npm_config_mode_coverage is set
+         * <script>
+         * # run and cover the <script> if env var $npm_config_mode_coverage is set
          */
             if (process.env.npm_config_mode_coverage) {
                 process.argv[2] = 'cover';
@@ -7238,18 +7312,18 @@ local.templateCoverageBadgeSvg =
             };
             local.cliDict['--eval'] = local.cliDict['--eval'] || local.cliDict._eval;
             local.cliDict['-e'] = local.cliDict['-e'] || local.cliDict._eval;
-            local.cliDict._help = local.cliDict._help || function () {
+            local.cliDict._help = local.cliDict._help || function (options) {
             /*
              *
              * # print help
              */
-                var commandList, packageJson, text, textDict;
+                var commandList, file, packageJson, text, textDict;
                 commandList = [{
-                    arg: '<arg1> <arg2> ...',
+                    arg: '<arg2> ...',
                     description: 'usage:',
-                    command: ['<command>'],
-                    file: __filename.replace((/.*\//), '')
+                    command: ['<arg1>']
                 }];
+                file = __filename.replace((/.*\//), '');
                 packageJson = require('./package.json');
                 textDict = {};
                 Object.keys(local.cliDict).sort().forEach(function (key, ii) {
@@ -7258,7 +7332,7 @@ local.templateCoverageBadgeSvg =
                     }
                     text = String(local.cliDict[key]);
                     if (key === '_default') {
-                        key = '<no-command>';
+                        key = '<>';
                     }
                     ii = textDict[text] = textDict[text] || (ii + 1);
                     if (commandList[ii]) {
@@ -7272,22 +7346,27 @@ local.templateCoverageBadgeSvg =
                         commandList[ii] = {
                             arg: commandList[ii][1].trim(),
                             command: [key],
-                            description: commandList[ii][2].trim(),
-                            file: commandList[0].file
+                            description: commandList[ii][2].trim()
                         };
                     }
                 });
-                console.log(packageJson.name + ' (' + packageJson.version + ')\n\n' + commandList
+                (options && options.modeError
+                    ? console.error
+                    : console.log)((options && options.modeError
+                    ? '\u001b[31merror: missing <arg1>\u001b[39m\n\n'
+                    : '') + packageJson.name + ' (' + packageJson.version + ')\n\n' + commandList
                     .filter(function (element) {
                         return element;
                     }).map(function (element) {
                         return (element.description + '\n' +
-                            element.file + '    ' +
-                            element.command.sort().join('|') + '    ' +
-                            element.arg).trim();
+                            file + '  ' +
+                            element.command.sort().join('|') + '  ' +
+                            element.arg.replace((/ +/g), '  '))
+                                .replace((/<>\||\|<>|<> {2}/), '')
+                                .trim();
                     })
-                    .join('\n\n') + '\n\nexample:\n' + local.path.basename(__filename) +
-                    '    --eval    \'console.log("hello world")\'');
+                    .join('\n\n') + '\n\nexample:\n' + file +
+                    '  --eval  \'console.log("hello world")\'');
             };
             local.cliDict['--help'] = local.cliDict['--help'] || local.cliDict._help;
             local.cliDict['-h'] = local.cliDict['-h'] || local.cliDict._help;
@@ -7317,6 +7396,12 @@ local.templateCoverageBadgeSvg =
             local.cliDict['-v'] = local.cliDict['-v'] || local.cliDict._version;
             // run fnc()
             fnc = fnc || function () {
+                // default to --help command if no arguments are given
+                if (process.argv.length <= 2 && !local.cliDict._default.modeNoCommand) {
+                    local.cliDict._help({ modeError: true });
+                    process.exit(1);
+                    return;
+                }
                 if (local.cliDict[process.argv[2]]) {
                     local.cliDict[process.argv[2]]();
                     return;
@@ -13834,7 +13919,7 @@ local.CSSLint = CSSLint; local.JSLINT = JSLINT, local.jslintEs6 = jslint; }());
             local.errorText = '\u001b[1m' + (lintType || 'jslint') + ' ' +  file + '\u001b[22m\n';
             local.errorList.forEach(function (error, ii) {
                 local.errorText += (' #' + String(ii + 1) + ' ').slice(-4) +
-                    '\u001b[33m' + error.message +
+                    '\u001b[31m' + error.message +
                     '\u001b[39m\n    ' + String(error.value).trim() +
                     '\u001b[90m \/\/ line ' + (error.line) +
                     ', col ' + (error.col) + '\u001b[39m\n';
@@ -14768,18 +14853,18 @@ s=0;s<i;s++)n[r+s]=e[t+s]|0},sjcl.misc.scrypt.blockxor=function(e,t,n,r,i){var s
             };
             local.cliDict['--eval'] = local.cliDict['--eval'] || local.cliDict._eval;
             local.cliDict['-e'] = local.cliDict['-e'] || local.cliDict._eval;
-            local.cliDict._help = local.cliDict._help || function () {
+            local.cliDict._help = local.cliDict._help || function (options) {
             /*
              *
              * # print help
              */
-                var commandList, packageJson, text, textDict;
+                var commandList, file, packageJson, text, textDict;
                 commandList = [{
-                    arg: '<arg1> <arg2> ...',
+                    arg: '<arg2> ...',
                     description: 'usage:',
-                    command: ['<command>'],
-                    file: __filename.replace((/.*\//), '')
+                    command: ['<arg1>']
                 }];
+                file = __filename.replace((/.*\//), '');
                 packageJson = require('./package.json');
                 textDict = {};
                 Object.keys(local.cliDict).sort().forEach(function (key, ii) {
@@ -14788,7 +14873,7 @@ s=0;s<i;s++)n[r+s]=e[t+s]|0},sjcl.misc.scrypt.blockxor=function(e,t,n,r,i){var s
                     }
                     text = String(local.cliDict[key]);
                     if (key === '_default') {
-                        key = '<no-command>';
+                        key = '<>';
                     }
                     ii = textDict[text] = textDict[text] || (ii + 1);
                     if (commandList[ii]) {
@@ -14802,22 +14887,27 @@ s=0;s<i;s++)n[r+s]=e[t+s]|0},sjcl.misc.scrypt.blockxor=function(e,t,n,r,i){var s
                         commandList[ii] = {
                             arg: commandList[ii][1].trim(),
                             command: [key],
-                            description: commandList[ii][2].trim(),
-                            file: commandList[0].file
+                            description: commandList[ii][2].trim()
                         };
                     }
                 });
-                console.log(packageJson.name + ' (' + packageJson.version + ')\n\n' + commandList
+                (options && options.modeError
+                    ? console.error
+                    : console.log)((options && options.modeError
+                    ? '\u001b[31merror: missing <arg1>\u001b[39m\n\n'
+                    : '') + packageJson.name + ' (' + packageJson.version + ')\n\n' + commandList
                     .filter(function (element) {
                         return element;
                     }).map(function (element) {
                         return (element.description + '\n' +
-                            element.file + '    ' +
-                            element.command.sort().join('|') + '    ' +
-                            element.arg).trim();
+                            file + '  ' +
+                            element.command.sort().join('|') + '  ' +
+                            element.arg.replace((/ +/g), '  '))
+                                .replace((/<>\||\|<>|<> {2}/), '')
+                                .trim();
                     })
-                    .join('\n\n') + '\n\nexample:\n' + local.path.basename(__filename) +
-                    '    --eval    \'console.log("hello world")\'');
+                    .join('\n\n') + '\n\nexample:\n' + file +
+                    '  --eval  \'console.log("hello world")\'');
             };
             local.cliDict['--help'] = local.cliDict['--help'] || local.cliDict._help;
             local.cliDict['-h'] = local.cliDict['-h'] || local.cliDict._help;
@@ -14847,6 +14937,12 @@ s=0;s<i;s++)n[r+s]=e[t+s]|0},sjcl.misc.scrypt.blockxor=function(e,t,n,r,i){var s
             local.cliDict['-v'] = local.cliDict['-v'] || local.cliDict._version;
             // run fnc()
             fnc = fnc || function () {
+                // default to --help command if no arguments are given
+                if (process.argv.length <= 2 && !local.cliDict._default.modeNoCommand) {
+                    local.cliDict._help({ modeError: true });
+                    process.exit(1);
+                    return;
+                }
                 if (local.cliDict[process.argv[2]]) {
                     local.cliDict[process.argv[2]]();
                     return;
@@ -15471,8 +15567,8 @@ split_lines=split_lines,exports.MAP=MAP,exports.ast_squeeze_more=require("./sque
         local.cliDict = {};
         local.cliDict._default = function () {
         /*
-         * file
-         * uglify file and print result to stdout
+         * <file>
+         * # uglify <file> and print result to stdout
          */
             if ((/^(?:http|https):\/\//).test(process.argv[2])) {
                 // uglify url
@@ -15621,32 +15717,6 @@ split_lines=split_lines,exports.MAP=MAP,exports.ast_squeeze_more=require("./sque
 
     // run shared js-env code - function-before
     (function () {
-        // init debug_inline
-        (function () {
-            console['debug_inlineConsoleError'.replace('_i', 'I')] =
-                console['debug_inlineConsoleError'.replace('_i', 'I')] ||
-                console.error;
-            console[
-                'debug_inline'.replace('_i', 'I')
-            ] = console[
-                'debug_inline'.replace('_i', 'I')
-            ] || function (arg0) {
-            /*
-             * this function will both print arg0 to stderr and return it
-             */
-                var consoleError;
-                // debug arguments
-                console['debug_inlineArguments'.replace('_i', 'I')] = arguments;
-                consoleError = console['debug_inlineConsoleError'.replace('_i', 'I')];
-                consoleError('\n\n\ndebug_inline'.replace('_i', 'I'));
-                consoleError.apply(console, arguments);
-                consoleError();
-                // return arg0 for inspection
-                return arg0;
-            };
-            ((typeof window === 'object' && window) || global)['debug_inline'.replace('_i', 'I')] =
-                console['debug_inline'.replace('_i', 'I')];
-        }());
         // init lib
         [
             'apidoc',
@@ -15808,7 +15878,11 @@ textarea {\n\
     regexp: true,\n\
     stupid: true\n\
 */\n\
+// init timerIntervalAjaxProgressUpdate\n\
 (function () {\n\
+/*\n\
+ * this function will increment the ajax-progress-bar until the webpage has loaded\n\
+ */\n\
     "use strict";\n\
     var ajaxProgressDiv1,\n\
         ajaxProgressState,\n\
@@ -15842,19 +15916,19 @@ textarea {\n\
         clearInterval(window.timerIntervalAjaxProgressUpdate);\n\
         ajaxProgressUpdate();\n\
     });\n\
+}());\n\
+// init domOnEventSelectAllInsidePre\n\
+(function () {\n\
+/*\n\
+ * this function will limit select-all inside <pre tabIndex="0"> elements\n\
+ * https://stackoverflow.com/questions/985272/selecting-text-in-an-element-akin-to-highlighting-with-your-mouse\n\
+ */\n\
+    "use strict";\n\
     if (window.domOnEventSelectAllInsidePre) {\n\
         return;\n\
     }\n\
-}());\n\
-(function () {\n\
-/*\n\
- * this function will limit select-all from growing outside a <pre tabIndex="0"> element\n\
- * https://stackoverflow.com/questions/985272/selecting-text-in-an-element-akin-to-highlighting-with-your-mouse\n\
-     */\n\
-    "use strict";\n\
     window.domOnEventSelectAllInsidePre = function (event) {\n\
         var range, selection;\n\
-        // select-all inside <pre> element\n\
         if (event &&\n\
                 event.code === "KeyA" &&\n\
                 (event.ctrlKey || event.metaKey) &&\n\
@@ -16787,6 +16861,32 @@ local.assetsDict['/assets.test.template.js'] = '\
 \n\
 \n\
 \n\
+    /* istanbul ignore next */\n\
+    // init debug_inline\n\
+    (function () {\n\
+        var consoleError, key;\n\
+        key = "debug_inline".replace("_i", "I");\n\
+        if (console[key]) {\n\
+            return;\n\
+        }\n\
+        consoleError = console.error;\n\
+        console[key] = function (arg0) {\n\
+        /*\n\
+         * this function will both print arg0 to stderr and return it\n\
+         */\n\
+            // debug arguments\n\
+            console[key + "Arguments"] = arguments;\n\
+            consoleError("\\n\\n" + key);\n\
+            consoleError.apply(console, arguments);\n\
+            consoleError("\\n");\n\
+            // return arg0 for inspection\n\
+            return arg0;\n\
+        };\n\
+        ((typeof window === "object" && window) || global)[key] = console[key];\n\
+    }());\n\
+\n\
+\n\
+\n\
     // run shared js\-env code - init-before\n\
     (function () {\n\
         // init local\n\
@@ -16814,6 +16914,13 @@ local.assetsDict['/assets.test.template.js'] = '\
             require(\'utility2\')).requireReadme();\n\
         // init test\n\
         local.testRunInit(local);\n\
+    }());\n\
+\n\
+\n\
+\n\
+    // run shared js\-env code - function\n\
+    (function () {\n\
+        return;\n\
     }());\n\
 }());\n\
 ';
@@ -19126,8 +19233,8 @@ return Utf8ArrayToStr(bff);
                 (/\nutility2-comment -->(?:\\n\\\n){4}[^`]*?^<!-- utility2-comment\\n\\\n/m),
                 // customize build script
                 (/\n# internal build script\n[\S\s]*?^- build_ci\.sh\n/m),
-                (/\nshBuildCiAfter \(\) \{\(set -e\n[^`]*?\n\)\}\n/),
-                (/\nshBuildCiBefore \(\) \{\(set -e\n[^`]*?\n\)\}\n/)
+                (/\nshBuildCiAfter \(\) \{\(set -e\n[\S\s]*?\n\)\}\n/),
+                (/\nshBuildCiBefore \(\) \{\(set -e\n[\S\s]*?\n\)\}\n/)
             ].forEach(function (rgx) {
                 // handle large string-replace
                 options.dataFrom.replace(rgx, function (match0) {
@@ -19291,8 +19398,8 @@ return Utf8ArrayToStr(bff);
             });
             // search-and-replace - customize dataTo
             [
-                // customize shared js\-env code
-                (/\n {4}\(function \(\) \{\n[\S\s]*?$/)
+                // customize shared js\-env code - function
+                (/\n {4}\}\(\)\);\n\n\n\n {4}\/\/ run shared js-env code - function\n[\S\s]*?$/)
             ].forEach(function (rgx) {
                 // handle large string-replace
                 options.dataFrom.replace(rgx, function (match0) {
@@ -19383,18 +19490,18 @@ return Utf8ArrayToStr(bff);
             };
             local.cliDict['--eval'] = local.cliDict['--eval'] || local.cliDict._eval;
             local.cliDict['-e'] = local.cliDict['-e'] || local.cliDict._eval;
-            local.cliDict._help = local.cliDict._help || function () {
+            local.cliDict._help = local.cliDict._help || function (options) {
             /*
              *
              * # print help
              */
-                var commandList, packageJson, text, textDict;
+                var commandList, file, packageJson, text, textDict;
                 commandList = [{
-                    arg: '<arg1> <arg2> ...',
+                    arg: '<arg2> ...',
                     description: 'usage:',
-                    command: ['<command>'],
-                    file: __filename.replace((/.*\//), '')
+                    command: ['<arg1>']
                 }];
+                file = __filename.replace((/.*\//), '');
                 packageJson = require('./package.json');
                 textDict = {};
                 Object.keys(local.cliDict).sort().forEach(function (key, ii) {
@@ -19403,7 +19510,7 @@ return Utf8ArrayToStr(bff);
                     }
                     text = String(local.cliDict[key]);
                     if (key === '_default') {
-                        key = '<no-command>';
+                        key = '<>';
                     }
                     ii = textDict[text] = textDict[text] || (ii + 1);
                     if (commandList[ii]) {
@@ -19417,22 +19524,27 @@ return Utf8ArrayToStr(bff);
                         commandList[ii] = {
                             arg: commandList[ii][1].trim(),
                             command: [key],
-                            description: commandList[ii][2].trim(),
-                            file: commandList[0].file
+                            description: commandList[ii][2].trim()
                         };
                     }
                 });
-                console.log(packageJson.name + ' (' + packageJson.version + ')\n\n' + commandList
+                (options && options.modeError
+                    ? console.error
+                    : console.log)((options && options.modeError
+                    ? '\u001b[31merror: missing <arg1>\u001b[39m\n\n'
+                    : '') + packageJson.name + ' (' + packageJson.version + ')\n\n' + commandList
                     .filter(function (element) {
                         return element;
                     }).map(function (element) {
                         return (element.description + '\n' +
-                            element.file + '    ' +
-                            element.command.sort().join('|') + '    ' +
-                            element.arg).trim();
+                            file + '  ' +
+                            element.command.sort().join('|') + '  ' +
+                            element.arg.replace((/ +/g), '  '))
+                                .replace((/<>\||\|<>|<> {2}/), '')
+                                .trim();
                     })
-                    .join('\n\n') + '\n\nexample:\n' + local.path.basename(__filename) +
-                    '    --eval    \'console.log("hello world")\'');
+                    .join('\n\n') + '\n\nexample:\n' + file +
+                    '  --eval  \'console.log("hello world")\'');
             };
             local.cliDict['--help'] = local.cliDict['--help'] || local.cliDict._help;
             local.cliDict['-h'] = local.cliDict['-h'] || local.cliDict._help;
@@ -19462,6 +19574,12 @@ return Utf8ArrayToStr(bff);
             local.cliDict['-v'] = local.cliDict['-v'] || local.cliDict._version;
             // run fnc()
             fnc = fnc || function () {
+                // default to --help command if no arguments are given
+                if (process.argv.length <= 2 && !local.cliDict._default.modeNoCommand) {
+                    local.cliDict._help({ modeError: true });
+                    process.exit(1);
+                    return;
+                }
                 if (local.cliDict[process.argv[2]]) {
                     local.cliDict[process.argv[2]]();
                     return;
@@ -29146,7 +29264,15 @@ textarea {\\n\
 \\\n\
 */\\n\
 \\\n\
+// init timerIntervalAjaxProgressUpdate\\n\
+\\\n\
 (function () {\\n\
+\\\n\
+/*\\n\
+\\\n\
+ * this function will increment the ajax-progress-bar until the webpage has loaded\\n\
+\\\n\
+ */\\n\
 \\\n\
     \"use strict\";\\n\
 \\\n\
@@ -29214,31 +29340,31 @@ textarea {\\n\
 \\\n\
     });\\n\
 \\\n\
+}());\\n\
+\\\n\
+// init domOnEventSelectAllInsidePre\\n\
+\\\n\
+(function () {\\n\
+\\\n\
+/*\\n\
+\\\n\
+ * this function will limit select-all inside <pre tabIndex=\"0\"> elements\\n\
+\\\n\
+ * https://stackoverflow.com/questions/985272/selecting-text-in-an-element-akin-to-highlighting-with-your-mouse\\n\
+\\\n\
+ */\\n\
+\\\n\
+    \"use strict\";\\n\
+\\\n\
     if (window.domOnEventSelectAllInsidePre) {\\n\
 \\\n\
         return;\\n\
 \\\n\
     }\\n\
 \\\n\
-}());\\n\
-\\\n\
-(function () {\\n\
-\\\n\
-/*\\n\
-\\\n\
- * this function will limit select-all from growing outside a <pre tabIndex=\"0\"> element\\n\
-\\\n\
- * https://stackoverflow.com/questions/985272/selecting-text-in-an-element-akin-to-highlighting-with-your-mouse\\n\
-\\\n\
-     */\\n\
-\\\n\
-    \"use strict\";\\n\
-\\\n\
     window.domOnEventSelectAllInsidePre = function (event) {\\n\
 \\\n\
         var range, selection;\\n\
-\\\n\
-        // select-all inside <pre> element\\n\
 \\\n\
         if (event &&\\n\
 \\\n\
@@ -29708,7 +29834,11 @@ textarea {\n\
     regexp: true,\n\
     stupid: true\n\
 */\n\
+// init timerIntervalAjaxProgressUpdate\n\
 (function () {\n\
+/*\n\
+ * this function will increment the ajax-progress-bar until the webpage has loaded\n\
+ */\n\
     \"use strict\";\n\
     var ajaxProgressDiv1,\n\
         ajaxProgressState,\n\
@@ -29742,19 +29872,19 @@ textarea {\n\
         clearInterval(window.timerIntervalAjaxProgressUpdate);\n\
         ajaxProgressUpdate();\n\
     });\n\
+}());\n\
+// init domOnEventSelectAllInsidePre\n\
+(function () {\n\
+/*\n\
+ * this function will limit select-all inside <pre tabIndex=\"0\"> elements\n\
+ * https://stackoverflow.com/questions/985272/selecting-text-in-an-element-akin-to-highlighting-with-your-mouse\n\
+ */\n\
+    \"use strict\";\n\
     if (window.domOnEventSelectAllInsidePre) {\n\
         return;\n\
     }\n\
-}());\n\
-(function () {\n\
-/*\n\
- * this function will limit select-all from growing outside a <pre tabIndex=\"0\"> element\n\
- * https://stackoverflow.com/questions/985272/selecting-text-in-an-element-akin-to-highlighting-with-your-mouse\n\
-     */\n\
-    \"use strict\";\n\
     window.domOnEventSelectAllInsidePre = function (event) {\n\
         var range, selection;\n\
-        // select-all inside <pre> element\n\
         if (event &&\n\
                 event.code === \"KeyA\" &&\n\
                 (event.ctrlKey || event.metaKey) &&\n\
@@ -29895,6 +30025,35 @@ local.assetsDict["/assets.utility2.test.js"] = "/* istanbul instrument in packag
 (function () {\n\
     'use strict';\n\
     var local;\n\
+\n\
+\n\
+\n\
+    /* istanbul ignore next */\n\
+    // init debug_inline\n\
+    (function () {\n\
+        var consoleError, key;\n\
+        key = \"debug_inline\".replace(\"_i\", \"I\");\n\
+        if (console[key]) {\n\
+            return;\n\
+        }\n\
+        consoleError = console.error;\n\
+        console[key] = function (arg0) {\n\
+        /*\n\
+         * this function will both print arg0 to stderr and return it\n\
+         */\n\
+            // debug arguments\n\
+            console[key + \"Arguments\"] = arguments;\n\
+            consoleError(\"\\n\
+\\n\
+\" + key);\n\
+            consoleError.apply(console, arguments);\n\
+            consoleError(\"\\n\
+\");\n\
+            // return arg0 for inspection\n\
+            return arg0;\n\
+        };\n\
+        ((typeof window === \"object\" && window) || global)[key] = console[key];\n\
+    }());\n\
 \n\
 \n\
 \n\
@@ -30908,6 +31067,8 @@ x-request-header-test: aa\\r\\n\
                 [local.vm, { runInThisContext: local.nop }],\n\
                 [process, { argv: [] }]\n\
             ], function (onError) {\n\
+                local.cliRun();\n\
+                process.argv[2] = 'undefined';\n\
                 local.cliRun();\n\
                 local.replStart = local.nop;\n\
                 process.argv[2] = '--help';\n\
@@ -32844,7 +33005,7 @@ local.stateInit({
     "utility2": {
         "assetsDict": {
             "/assets.index.css": "",
-            "/assets.index.template.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n<meta charset=\"UTF-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<!-- \"assets.utility2.template.html\" -->\n<title>{{env.npm_package_name}} ({{env.npm_package_version}})</title>\n<style>\n/* jslint-utility2 */\n/*csslint\n*/\n/* jslint-ignore-begin */\n*,\n*:after,\n*:before {\n    box-sizing: border-box;\n}\n/* jslint-ignore-end */\n@keyframes uiAnimateShake {\n    0%, 50% {\n        transform: translateX(10px);\n    }\n    25%, 75% {\n        transform: translateX(-10px);\n    }\n    100% {\n        transform: translateX(0);\n    }\n}\n@keyframes uiAnimateSpin {\n    0% {\n        transform: rotate(0deg);\n    }\n    100% {\n        transform: rotate(360deg);\n    }\n}\na {\n    overflow-wrap: break-word;\n}\nbody {\n    background: #eef;\n    font-family: Arial, Helvetica, sans-serif;\n    margin: 0 40px;\n}\nbody > div,\nbody > pre,\nbody > textarea,\nbody > .button {\n    margin-bottom: 20px;\n}\nbody > textarea {\n    height: 10rem;\n    width: 100%;\n}\nbody > textarea[readonly] {\n    background: #ddd;\n}\nbody > .button {\n    width: 20rem;\n}\ncode,\npre,\ntextarea {\n    font-family: Consolas, Menlo, monospace;\n    font-size: small;\n}\npre {\n    overflow-wrap: break-word;\n    white-space: pre-wrap;\n}\ntextarea {\n    overflow: auto;\n    white-space: pre;\n}\n.button {\n    background-color: #fff;\n    border: 1px solid;\n    border-bottom-color: rgb(186, 186, 186);\n    border-left-color: rgb(209, 209, 209);\n    border-radius: 4px;\n    border-right-color: rgb(209, 209, 209);\n    border-top-color: rgb(216, 216, 216);\n    color: #00d;\n    cursor: pointer;\n    display: inline-block;\n    font-family: Arial, Helvetica, sans-serif;\n    font-size: 12px;\n    font-style: normal;\n    font-weight: normal;\n    margin: 0;\n    padding: 2px 7px 3px 7px;\n    text-align: center;\n    text-decoration: underline;\n}\n.colorError {\n    color: #d00;\n}\n.uiAnimateShake {\n    animation-duration: 500ms;\n    animation-name: uiAnimateShake;\n}\n.uiAnimateSlide {\n    overflow-y: hidden;\n    transition: max-height ease-in 250ms, min-height ease-in 250ms, padding-bottom ease-in 250ms, padding-top ease-in 250ms;\n}\n.utility2FooterDiv {\n    text-align: center;\n}\n.zeroPixel {\n    border: 0;\n    height: 0;\n    margin: 0;\n    padding: 0;\n    width: 0;\n}\n</style>\n</head>\n<body>\n<div id=\"ajaxProgressDiv1\" style=\"background: #d00; height: 2px; left: 0; margin: 0; padding: 0; position: fixed; top: 0; transition: background 500ms, width 1500ms; width: 0%; z-index: 1;\"></div>\n<div class=\"uiAnimateSpin\" style=\"animation: uiAnimateSpin 2s linear infinite; border: 5px solid #999; border-radius: 50%; border-top: 5px solid #7d7; display: none; height: 25px; vertical-align: middle; width: 25px;\"></div>\n<code style=\"display: none;\"></code><div class=\"button colorError uiAnimateShake uiAnimateSlide utility2FooterDiv zeroPixel\" style=\"display: none;\"></div><pre style=\"display: none;\"></pre><textarea readonly style=\"display: none;\"></textarea>\n<script>\n/* jslint-utility2 */\n/*jslint\n    bitwise: true,\n    browser: true,\n    maxerr: 4,\n    maxlen: 100,\n    node: true,\n    nomen: true,\n    regexp: true,\n    stupid: true\n*/\n(function () {\n    \"use strict\";\n    var ajaxProgressDiv1,\n        ajaxProgressState,\n        ajaxProgressUpdate;\n    if (window.timerIntervalAjaxProgressUpdate) {\n        return;\n    }\n    ajaxProgressDiv1 = document.querySelector(\"#ajaxProgressDiv1\");\n    setTimeout(function () {\n        ajaxProgressDiv1.style.width = \"25%\";\n    });\n    ajaxProgressState = 0;\n    ajaxProgressUpdate = (window.local &&\n        window.local.ajaxProgressUpdate) || function () {\n        ajaxProgressDiv1.style.width = \"100%\";\n        setTimeout(function () {\n            ajaxProgressDiv1.style.background = \"transparent\";\n            setTimeout(function () {\n                ajaxProgressDiv1.style.width = \"0%\";\n            }, 500);\n        }, 1500);\n    };\n    window.timerIntervalAjaxProgressUpdate = setInterval(function () {\n        ajaxProgressState += 1;\n        ajaxProgressDiv1.style.width = Math.max(\n            100 - 75 * Math.exp(-0.125 * ajaxProgressState),\n            Number(ajaxProgressDiv1.style.width.slice(0, -1)) || 0\n        ) + \"%\";\n    }, 1000);\n    window.addEventListener(\"load\", function () {\n        clearInterval(window.timerIntervalAjaxProgressUpdate);\n        ajaxProgressUpdate();\n    });\n    if (window.domOnEventSelectAllInsidePre) {\n        return;\n    }\n}());\n(function () {\n/*\n * this function will limit select-all from growing outside a <pre tabIndex=\"0\"> element\n * https://stackoverflow.com/questions/985272/selecting-text-in-an-element-akin-to-highlighting-with-your-mouse\n     */\n    \"use strict\";\n    window.domOnEventSelectAllInsidePre = function (event) {\n        var range, selection;\n        // select-all inside <pre> element\n        if (event &&\n                event.code === \"KeyA\" &&\n                (event.ctrlKey || event.metaKey) &&\n                event.target.closest(\"pre\")) {\n            range = document.createRange();\n            range.selectNodeContents(event.target.closest(\"pre\"));\n            selection = window.getSelection();\n            selection.removeAllRanges();\n            selection.addRange(range);\n            event.preventDefault();\n        }\n    };\n    document.addEventListener(\"keydown\", window.domOnEventSelectAllInsidePre);\n}());\n</script>\n<h1>\n<!-- utility2-comment\n    <a\n        {{#if env.npm_package_homepage}}\n        href=\"{{env.npm_package_homepage}}\"\n        {{/if env.npm_package_homepage}}\n        target=\"_blank\"\n    >\nutility2-comment -->\n        {{env.npm_package_name}} ({{env.npm_package_version}})\n<!-- utility2-comment\n    </a>\nutility2-comment -->\n</h1>\n<h3>{{env.npm_package_description}}</h3>\n<!-- utility2-comment\n<a class=\"button\" download href=\"assets.app.js\">download standalone app</a><br>\n<button class=\"button onclick onreset\" id=\"testRunButton1\">run internal test</button><br>\n<div class=\"uiAnimateSlide\" id=\"testReportDiv1\" style=\"border-bottom: 0; border-top: 0; margin-bottom: 0; margin-top: 0; max-height: 0; padding-bottom: 0; padding-top: 0;\"></div>\nutility2-comment -->\n\n\n\n<label>stderr and stdout</label>\n<textarea class=\"resettable\" id=\"outputTextareaStdout1\" readonly></textarea>\n<!-- utility2-comment\n{{#if isRollup}}\n<script src=\"assets.app.js\"></script>\n{{#unless isRollup}}\nutility2-comment -->\n<script src=\"assets.utility2.rollup.js\"></script>\n<script>window.utility2.onResetBefore.counter += 1;</script>\n<script src=\"jsonp.utility2.stateInit?callback=window.utility2.stateInit\"></script>\n<script src=\"assets.performance_benchmarks.js\"></script>\n<script src=\"assets.example.js\"></script>\n<script src=\"assets.test.js\"></script>\n<script>window.utility2.onResetBefore();</script>\n<!-- utility2-comment\n{{/if isRollup}}\nutility2-comment -->\n<div class=\"utility2FooterDiv\">\n    [ this app was created with\n    <a href=\"https://github.com/kaizhu256/node-utility2\" target=\"_blank\">utility2</a>\n    ]\n</div>\n</body>\n</html>\n",
+            "/assets.index.template.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n<meta charset=\"UTF-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<!-- \"assets.utility2.template.html\" -->\n<title>{{env.npm_package_name}} ({{env.npm_package_version}})</title>\n<style>\n/* jslint-utility2 */\n/*csslint\n*/\n/* jslint-ignore-begin */\n*,\n*:after,\n*:before {\n    box-sizing: border-box;\n}\n/* jslint-ignore-end */\n@keyframes uiAnimateShake {\n    0%, 50% {\n        transform: translateX(10px);\n    }\n    25%, 75% {\n        transform: translateX(-10px);\n    }\n    100% {\n        transform: translateX(0);\n    }\n}\n@keyframes uiAnimateSpin {\n    0% {\n        transform: rotate(0deg);\n    }\n    100% {\n        transform: rotate(360deg);\n    }\n}\na {\n    overflow-wrap: break-word;\n}\nbody {\n    background: #eef;\n    font-family: Arial, Helvetica, sans-serif;\n    margin: 0 40px;\n}\nbody > div,\nbody > pre,\nbody > textarea,\nbody > .button {\n    margin-bottom: 20px;\n}\nbody > textarea {\n    height: 10rem;\n    width: 100%;\n}\nbody > textarea[readonly] {\n    background: #ddd;\n}\nbody > .button {\n    width: 20rem;\n}\ncode,\npre,\ntextarea {\n    font-family: Consolas, Menlo, monospace;\n    font-size: small;\n}\npre {\n    overflow-wrap: break-word;\n    white-space: pre-wrap;\n}\ntextarea {\n    overflow: auto;\n    white-space: pre;\n}\n.button {\n    background-color: #fff;\n    border: 1px solid;\n    border-bottom-color: rgb(186, 186, 186);\n    border-left-color: rgb(209, 209, 209);\n    border-radius: 4px;\n    border-right-color: rgb(209, 209, 209);\n    border-top-color: rgb(216, 216, 216);\n    color: #00d;\n    cursor: pointer;\n    display: inline-block;\n    font-family: Arial, Helvetica, sans-serif;\n    font-size: 12px;\n    font-style: normal;\n    font-weight: normal;\n    margin: 0;\n    padding: 2px 7px 3px 7px;\n    text-align: center;\n    text-decoration: underline;\n}\n.colorError {\n    color: #d00;\n}\n.uiAnimateShake {\n    animation-duration: 500ms;\n    animation-name: uiAnimateShake;\n}\n.uiAnimateSlide {\n    overflow-y: hidden;\n    transition: max-height ease-in 250ms, min-height ease-in 250ms, padding-bottom ease-in 250ms, padding-top ease-in 250ms;\n}\n.utility2FooterDiv {\n    text-align: center;\n}\n.zeroPixel {\n    border: 0;\n    height: 0;\n    margin: 0;\n    padding: 0;\n    width: 0;\n}\n</style>\n</head>\n<body>\n<div id=\"ajaxProgressDiv1\" style=\"background: #d00; height: 2px; left: 0; margin: 0; padding: 0; position: fixed; top: 0; transition: background 500ms, width 1500ms; width: 0%; z-index: 1;\"></div>\n<div class=\"uiAnimateSpin\" style=\"animation: uiAnimateSpin 2s linear infinite; border: 5px solid #999; border-radius: 50%; border-top: 5px solid #7d7; display: none; height: 25px; vertical-align: middle; width: 25px;\"></div>\n<code style=\"display: none;\"></code><div class=\"button colorError uiAnimateShake uiAnimateSlide utility2FooterDiv zeroPixel\" style=\"display: none;\"></div><pre style=\"display: none;\"></pre><textarea readonly style=\"display: none;\"></textarea>\n<script>\n/* jslint-utility2 */\n/*jslint\n    bitwise: true,\n    browser: true,\n    maxerr: 4,\n    maxlen: 100,\n    node: true,\n    nomen: true,\n    regexp: true,\n    stupid: true\n*/\n// init timerIntervalAjaxProgressUpdate\n(function () {\n/*\n * this function will increment the ajax-progress-bar until the webpage has loaded\n */\n    \"use strict\";\n    var ajaxProgressDiv1,\n        ajaxProgressState,\n        ajaxProgressUpdate;\n    if (window.timerIntervalAjaxProgressUpdate) {\n        return;\n    }\n    ajaxProgressDiv1 = document.querySelector(\"#ajaxProgressDiv1\");\n    setTimeout(function () {\n        ajaxProgressDiv1.style.width = \"25%\";\n    });\n    ajaxProgressState = 0;\n    ajaxProgressUpdate = (window.local &&\n        window.local.ajaxProgressUpdate) || function () {\n        ajaxProgressDiv1.style.width = \"100%\";\n        setTimeout(function () {\n            ajaxProgressDiv1.style.background = \"transparent\";\n            setTimeout(function () {\n                ajaxProgressDiv1.style.width = \"0%\";\n            }, 500);\n        }, 1500);\n    };\n    window.timerIntervalAjaxProgressUpdate = setInterval(function () {\n        ajaxProgressState += 1;\n        ajaxProgressDiv1.style.width = Math.max(\n            100 - 75 * Math.exp(-0.125 * ajaxProgressState),\n            Number(ajaxProgressDiv1.style.width.slice(0, -1)) || 0\n        ) + \"%\";\n    }, 1000);\n    window.addEventListener(\"load\", function () {\n        clearInterval(window.timerIntervalAjaxProgressUpdate);\n        ajaxProgressUpdate();\n    });\n}());\n// init domOnEventSelectAllInsidePre\n(function () {\n/*\n * this function will limit select-all inside <pre tabIndex=\"0\"> elements\n * https://stackoverflow.com/questions/985272/selecting-text-in-an-element-akin-to-highlighting-with-your-mouse\n */\n    \"use strict\";\n    if (window.domOnEventSelectAllInsidePre) {\n        return;\n    }\n    window.domOnEventSelectAllInsidePre = function (event) {\n        var range, selection;\n        if (event &&\n                event.code === \"KeyA\" &&\n                (event.ctrlKey || event.metaKey) &&\n                event.target.closest(\"pre\")) {\n            range = document.createRange();\n            range.selectNodeContents(event.target.closest(\"pre\"));\n            selection = window.getSelection();\n            selection.removeAllRanges();\n            selection.addRange(range);\n            event.preventDefault();\n        }\n    };\n    document.addEventListener(\"keydown\", window.domOnEventSelectAllInsidePre);\n}());\n</script>\n<h1>\n<!-- utility2-comment\n    <a\n        {{#if env.npm_package_homepage}}\n        href=\"{{env.npm_package_homepage}}\"\n        {{/if env.npm_package_homepage}}\n        target=\"_blank\"\n    >\nutility2-comment -->\n        {{env.npm_package_name}} ({{env.npm_package_version}})\n<!-- utility2-comment\n    </a>\nutility2-comment -->\n</h1>\n<h3>{{env.npm_package_description}}</h3>\n<!-- utility2-comment\n<a class=\"button\" download href=\"assets.app.js\">download standalone app</a><br>\n<button class=\"button onclick onreset\" id=\"testRunButton1\">run internal test</button><br>\n<div class=\"uiAnimateSlide\" id=\"testReportDiv1\" style=\"border-bottom: 0; border-top: 0; margin-bottom: 0; margin-top: 0; max-height: 0; padding-bottom: 0; padding-top: 0;\"></div>\nutility2-comment -->\n\n\n\n<label>stderr and stdout</label>\n<textarea class=\"resettable\" id=\"outputTextareaStdout1\" readonly></textarea>\n<!-- utility2-comment\n{{#if isRollup}}\n<script src=\"assets.app.js\"></script>\n{{#unless isRollup}}\nutility2-comment -->\n<script src=\"assets.utility2.rollup.js\"></script>\n<script>window.utility2.onResetBefore.counter += 1;</script>\n<script src=\"jsonp.utility2.stateInit?callback=window.utility2.stateInit\"></script>\n<script src=\"assets.performance_benchmarks.js\"></script>\n<script src=\"assets.example.js\"></script>\n<script src=\"assets.test.js\"></script>\n<script>window.utility2.onResetBefore();</script>\n<!-- utility2-comment\n{{/if isRollup}}\nutility2-comment -->\n<div class=\"utility2FooterDiv\">\n    [ this app was created with\n    <a href=\"https://github.com/kaizhu256/node-utility2\" target=\"_blank\">utility2</a>\n    ]\n</div>\n</body>\n</html>\n",
             "/assets.swgg.swagger.json": ""
         },
         "env": {
@@ -32853,7 +33014,7 @@ local.stateInit({
             "npm_package_homepage": "https://github.com/kaizhu256/node-performance-benchmarks",
             "npm_package_name": "performance-benchmarks",
             "npm_package_nameLib": "performance_benchmarks",
-            "npm_package_version": "2018.5.1"
+            "npm_package_version": "2018.5.2"
         }
     }
 });
@@ -33401,7 +33562,11 @@ textarea {\n\
     regexp: true,\n\
     stupid: true\n\
 */\n\
+// init timerIntervalAjaxProgressUpdate\n\
 (function () {\n\
+/*\n\
+ * this function will increment the ajax-progress-bar until the webpage has loaded\n\
+ */\n\
     "use strict";\n\
     var ajaxProgressDiv1,\n\
         ajaxProgressState,\n\
@@ -33435,19 +33600,19 @@ textarea {\n\
         clearInterval(window.timerIntervalAjaxProgressUpdate);\n\
         ajaxProgressUpdate();\n\
     });\n\
+}());\n\
+// init domOnEventSelectAllInsidePre\n\
+(function () {\n\
+/*\n\
+ * this function will limit select-all inside <pre tabIndex="0"> elements\n\
+ * https://stackoverflow.com/questions/985272/selecting-text-in-an-element-akin-to-highlighting-with-your-mouse\n\
+ */\n\
+    "use strict";\n\
     if (window.domOnEventSelectAllInsidePre) {\n\
         return;\n\
     }\n\
-}());\n\
-(function () {\n\
-/*\n\
- * this function will limit select-all from growing outside a <pre tabIndex="0"> element\n\
- * https://stackoverflow.com/questions/985272/selecting-text-in-an-element-akin-to-highlighting-with-your-mouse\n\
-     */\n\
-    "use strict";\n\
     window.domOnEventSelectAllInsidePre = function (event) {\n\
         var range, selection;\n\
-        // select-all inside <pre> element\n\
         if (event &&\n\
                 event.code === "KeyA" &&\n\
                 (event.ctrlKey || event.metaKey) &&\n\
@@ -33606,6 +33771,32 @@ utility2-comment -->\n\
 
 
 
+    /* istanbul ignore next */
+    // init debug_inline
+    (function () {
+        var consoleError, key;
+        key = "debug_inline".replace("_i", "I");
+        if (console[key]) {
+            return;
+        }
+        consoleError = console.error;
+        console[key] = function (arg0) {
+        /*
+         * this function will both print arg0 to stderr and return it
+         */
+            // debug arguments
+            console[key + "Arguments"] = arguments;
+            consoleError("\n\n" + key);
+            consoleError.apply(console, arguments);
+            consoleError("\n");
+            // return arg0 for inspection
+            return arg0;
+        };
+        ((typeof window === "object" && window) || global)[key] = console[key];
+    }());
+
+
+
     // run shared js-env code - init-before
     (function () {
         // init local
@@ -33633,6 +33824,13 @@ utility2-comment -->\n\
             require('utility2')).requireReadme();
         // init test
         local.testRunInit(local);
+    }());
+
+
+
+    // run shared js-env code - function
+    (function () {
+        return;
     }());
 }());
 /* script-end /assets.test.js */

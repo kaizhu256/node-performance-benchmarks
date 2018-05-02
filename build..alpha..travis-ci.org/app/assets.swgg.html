@@ -484,7 +484,11 @@ textarea {
     regexp: true,
     stupid: true
 */
+// init timerIntervalAjaxProgressUpdate
 (function () {
+/*
+ * this function will increment the ajax-progress-bar until the webpage has loaded
+ */
     "use strict";
     var ajaxProgressDiv1,
         ajaxProgressState,
@@ -518,19 +522,19 @@ textarea {
         clearInterval(window.timerIntervalAjaxProgressUpdate);
         ajaxProgressUpdate();
     });
+}());
+// init domOnEventSelectAllInsidePre
+(function () {
+/*
+ * this function will limit select-all inside <pre tabIndex="0"> elements
+ * https://stackoverflow.com/questions/985272/selecting-text-in-an-element-akin-to-highlighting-with-your-mouse
+ */
+    "use strict";
     if (window.domOnEventSelectAllInsidePre) {
         return;
     }
-}());
-(function () {
-/*
- * this function will limit select-all from growing outside a <pre tabIndex="0"> element
- * https://stackoverflow.com/questions/985272/selecting-text-in-an-element-akin-to-highlighting-with-your-mouse
-     */
-    "use strict";
     window.domOnEventSelectAllInsidePre = function (event) {
         var range, selection;
-        // select-all inside <pre> element
         if (event &&
                 event.code === "KeyA" &&
                 (event.ctrlKey || event.metaKey) &&

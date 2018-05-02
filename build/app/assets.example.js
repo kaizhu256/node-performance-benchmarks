@@ -426,7 +426,11 @@ textarea {\n\
     regexp: true,\n\
     stupid: true\n\
 */\n\
+// init timerIntervalAjaxProgressUpdate\n\
 (function () {\n\
+/*\n\
+ * this function will increment the ajax-progress-bar until the webpage has loaded\n\
+ */\n\
     "use strict";\n\
     var ajaxProgressDiv1,\n\
         ajaxProgressState,\n\
@@ -460,19 +464,19 @@ textarea {\n\
         clearInterval(window.timerIntervalAjaxProgressUpdate);\n\
         ajaxProgressUpdate();\n\
     });\n\
+}());\n\
+// init domOnEventSelectAllInsidePre\n\
+(function () {\n\
+/*\n\
+ * this function will limit select-all inside <pre tabIndex="0"> elements\n\
+ * https://stackoverflow.com/questions/985272/selecting-text-in-an-element-akin-to-highlighting-with-your-mouse\n\
+ */\n\
+    "use strict";\n\
     if (window.domOnEventSelectAllInsidePre) {\n\
         return;\n\
     }\n\
-}());\n\
-(function () {\n\
-/*\n\
- * this function will limit select-all from growing outside a <pre tabIndex="0"> element\n\
- * https://stackoverflow.com/questions/985272/selecting-text-in-an-element-akin-to-highlighting-with-your-mouse\n\
-     */\n\
-    "use strict";\n\
     window.domOnEventSelectAllInsidePre = function (event) {\n\
         var range, selection;\n\
-        // select-all inside <pre> element\n\
         if (event &&\n\
                 event.code === "KeyA" &&\n\
                 (event.ctrlKey || event.metaKey) &&\n\
